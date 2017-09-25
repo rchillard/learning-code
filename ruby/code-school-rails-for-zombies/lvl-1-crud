@@ -1,0 +1,58 @@
+
+# Learning basic CRUD
+# Individual objects (Tweet) are single representatives of database tables (Tweets)
+# Capitalize table names
+# You can create new via the dot syntax OR the hash syntax
+
+# CREATE
+# Dot Syntax
+# t = Tweet.new
+# t.status = "Hearts"
+# t.zombie = "Bob"
+# Hash Syntax
+# t = Tweet.new(status: "Hearts", zombie: "Bob")
+# Basic Syntax
+# Tweet.create(status: "Hearts", zombie: "Bob")
+t = Tweet.new
+t.status = "I <3 brains."  # Tweet ID gets created for us
+t.save
+
+# READ
+Tweet.find(3)
+Tweet.count # Returns total number
+Tweet.order(:zombie) # Returns all tweets ordered by the parameter (zombie name in this case)
+Tweet.limit(10) # Returns the first 10 tweets
+Tweet.where(zombie: "ash") # Returns all zombies named "ash"
+# Other useful reading functions
+Tweet.find(3, 4, 5) # Returns array of the Tweets
+Tweet.first
+Tweet.last
+Tweet.all # Returns an array of all Tweets
+
+# Method chaining opportunity
+Tweet.where(zombie: "ash").order(:status).limit(10)
+
+
+# UPDATE
+t = Tweet.find(3)
+t.zombie = "EyeballChomper"
+t.save
+# Multiple attribute assignment
+t.attributes = {
+	status: "What?"
+	zombie: "MasterEyeBallChomper" }
+t.save
+# Or simplify it (take out the save) by using update
+t = Tweet.find(3)
+t.update(
+	status: "WHAAAT?",
+	zombie: "OOOHHKAAAYY")
+
+# DELETE
+t = Tweet.find(3)
+t.destroy
+
+#Method chaining opportunity
+Tweet.find(2).destroy # Way to string into one line
+
+# Models are how you communicate with data stores

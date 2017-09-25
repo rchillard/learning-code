@@ -1,0 +1,80 @@
+
+# Routes or Routers
+# These define how the Controller -> Model -> View actually flows
+
+ZombieTwitter::Application.routes.draw do 
+	resources :tweets
+end
+
+# zombie_twitter
+# > config
+# > > routes.rb
+
+# This generates
+Code					URL					TweetsController
+tweets_path				/tweets 			def index 
+tweet 					/tweet/<id>			def show
+new_tweet_path			/tweets/new 		def new
+edit_tweet_path(tweet)	/tweets/<id>/edit 	def edit 
+
+/
+# Adding a custom routes
+ZombieTwitter::Application.routes.draw do 
+	resources :tweets
+	get '/new_tweet' => 'tweets#new'
+	#    PATH            Controller#Action
+end
+
+# Adding further customization
+get '/all' => 'tweets#index', as: 'all_tweets'
+<% link_to "All Tweets", all_tweets_path %>       >
+
+
+# Redirecting 
+get '/all' => redirect('/tweets')
+
+# Root route
+root to: "tweets#index"
+#         Controller#Action
+
+# Link to the root PATH
+<%= link_to "All Tweets", rooth_path %>         >
+
+
+# Adding route paramters
+# In the Controller
+def index
+
+	if params[:zipcode]
+		@tweets = Tweet.where(zipcode: params[:zipcode])
+	else
+		@tweets = Tweet.all
+	end 
+
+	respond_to do |format|
+		format.html #index.html.erb
+		format.xml { render xml: @tweets }
+	end
+
+end 
+# In the Router
+get '/local_tweets/:zipcode' => 'tweets#index', as: 'local_tweets'
+# In the View
+<%= link_to "Tweets in 32828", local_tweets_path(32828) %>        >
+
+
+# How to implement parameter specific routing
+# Add a specific one (at bottom of file)
+# Router:
+get ':name' => 'tweets#index', as: 'zombie_tweets'
+# View:
+<% link_to "Gregg", zombie_tweets_path('greggpollack') %>          >
+
+def index
+	if params[:name]
+		@zombie = Zombie.where(name: params[:name]).first
+		@tweets = zombie.tweets 
+	else
+		@tweets = Tweet.all 
+	end
+end 

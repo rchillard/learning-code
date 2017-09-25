@@ -1,0 +1,58 @@
+
+# Learning models: Models are how you communicate with your data store
+
+# Application stack
+# Browser
+# Four components
+# > Models (app/models/ houses all of the models)
+
+# How do you enforce data validation?
+
+class Tweet < ActiveRecord::Base
+	validates_presence_of :status
+end
+
+t = Tweet.new
+t.save
+
+# Returns false, because the validation failed
+# Without the validation, the call will return true
+
+t.errors.messages
+# Returns the errors that came back
+
+# Other validations
+validates_numericality of :fingers #verify something is a number
+validates_uniqueness_of :toothmarks #verify it is unique in the database
+validates_confirmation_of :password #verify that password is equal
+validates_acceptance_of :zombification #verify that checkbox was selected
+validates_length_of :password, minimum: 3 #verify length meets a minimum
+validates_format_of :email, with: /regex/i #verify a certain format (regular expression)
+validates_inclusion_of :age, in: 21..99 #verify a value is between two values
+validates_exclusion_of :age, in: 0...21, message: "Sorry you must be over 21" #verify the value is outside the input
+
+# General expression
+# validates <attribute>, <validation>
+validates :status, presence: true # validates the presence of status input
+validates :status, length: { minimum: 3 } # validates status is at least 3 characters long
+# Alternative syntax
+validates :status,
+			presence: true,
+			length: { minimum: 3}
+
+# Database relationships
+# A zombie has many tweets
+class Zombie < ActiveRecord::Base
+	has_many :tweets
+end
+
+class Tweet < ActiveRecord::Base
+	belongs_to :zombie
+end 
+
+ash = Zombie.find(1) # Returns the 1st zombie (named "Ash")
+t = Tweet.create(status: "Your eyelids taste like bacon.", zombie: ash) # Feeds the instance (object) back into the database -- RAILS handles it
+
+t = Tweet.find(5) # Returns the tweet
+t.zombie # Will return the actual Zombie from the database
+t.zombie.name # Will return the name of that zombie

@@ -1,0 +1,138 @@
+
+# Learning Controllers: the brains that control the Models and the Views
+# Models used to get data out of a database
+# Views used to display data that comes from the model
+
+# You should not call the Model from a View
+# The Controller should be calling the Model
+/app/controllers/tweets_controller.rb 
+
+# zombie_twitter
+# > app 
+# > > controllers 
+# > > > tweets_controller.rb 
+
+# Convention over configuration -- VERY IMPORTANT
+# As a request comes in, it will first go to the controller, which will leverage model to retrieve data, then return to the view
+
+# app/controllers/tweets_controller.rb
+class TweetsController < ApplicationController
+	def show  # Show is also called an action; not a coincidence that the name of the view is show.html.erb
+		@tweet = Tweet.find(params[:id])
+		render action: 'status' # This allows you to render to a different view
+	end
+end
+
+# app/views/tweets/show.html.erb
+<h1><%= @tweet.status %></h1>                  % > 
+<p>Posted by <%= @tweet.zombie.name %></p>     % >
+
+# the local variable @ allows the controller and view to share the variable
+
+Params Recipe: params = { id: "1" }
+
+# Parameters continued
+/tweets?status=I'm dead              /
+params = { status: "I'm dead" }
+@tweet = Tweet.create(status: params[:status])  #the Controller
+/
+/tweets?tweet[status]=I'm dead    '
+params = { tweet: {status: "I'm dead" }} 
+@tweet = Tweet.create(status: params[:tweet][:status])
+
+# alternate syntax
+@tweet = Tweet.create(params[:tweet])
+
+# You must specify the Strong Parameters or the Parameters that you require
+# This is to keep users from setting any attributes
+require(:tweet)
+permit(:status)
+
+@tweet = Tweet.create(params.require(:tweet).permit(:status))
+
+# How do you get JSON representation?
+
+class TweetsController < ApplicationController
+	def show
+		@tweet = Tweet.find(params[:id])
+		respond_to do |format|
+			format.html # show.html.erb
+			format.json { render json: @tweet }
+		end
+	end
+end
+
+# The various Controller Actions
+
+class TweetsController < ApplicationController
+	def index # List all tweets
+	end
+
+	def show # Show a single tweet
+	end
+
+	def new # Show a new tweet form
+	end
+
+	def edit # Show an edit tweet form
+	end
+
+	def create # Create a new tweet
+	end
+
+	def update # Update a tweet
+	end
+
+	def destroy # Delete a tweet
+	end
+end
+
+# Adding Authentication
+# session works like a per user hash
+# flash[:notice] sends message to the user
+# redirect_to <path> redirects a request to a different action/view
+
+class TweetsController < ApplicationController
+	def edit
+		@tweet = Tweet.find(params[:id])
+		if session[:zombie_id] != @tweet.zombie_id # Check to see if the current user is the person who posted the tweet
+			flash[:notice] = "Sorry, you can't edit this tweet!"
+			redirect_to(tweets_path)
+		end
+	end
+end
+
+# alternate
+redirect_to(tweets_path, notice: "Sorry, you can't edit this tweet!")
+
+# Where do you display flash notices?
+# Put a separate if/then statement with DIV in the application layer
+# Example:
+<% if flash[:notice] %>               > 
+	<div id="notice"<%= flash[:notice] %></div>
+<% end %>               >
+
+# How do you stay D.R.Y with multiple Controller methods doing similar things?
+# For example, these three all need to get a tweet and check authorization, so you can simplify this by:
+
+class TweetsController < ApplicationController
+	
+	before_action :get_tweet, only: [:edit, :update, :destroy]
+	before_action :check_auth, :only => [:edit, :update, :destroy]
+	
+	def get_tweet
+		@tweet = Tweet.find(params[:id])
+	end
+
+	def check_auth
+		if session[:zombie_id] != @tweet.zombie_id
+			flash[:notice] = "Sorry, you can't edit this tweet!"
+			redirect_to tweets_path
+		end
+	end
+
+def edit
+def update
+def destroy
+
+end

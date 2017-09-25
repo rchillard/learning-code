@@ -1,0 +1,74 @@
+
+# Learning views: the visual representation of your RAILS application
+# This is where we find the User Interface for the application
+
+# For the application
+# zombie_twitter
+# > app
+# > > views
+# > > > layouts -- this contains the templates for the site
+# > > > > application.html.erb -- houses the header/footer that you don't want to repeat
+# > > > zombies
+# > > > tweets
+# > > > > index.html.erb -- see all of the tweets
+# > > > > show.html.erb -- view an individual tweet
+
+# Each of these bottom files is a view (.html.erb), ERB = Embedded Ruby
+
+# Tag for Ruby embedded in html
+<% ruby here %> # for lookups 
+>
+<%= ruby here but also print into html %> # for displaying lookups
+>
+<% tweet = Tweet.find(1) %>
+<h1><%= tweet.status %></h1> # the %= indicates to RAILS it needs to be output as HTML
+<p>Posted by <%= tweet.zombie.name %></p>
+
+# Abide by the philosophy of D. R. Y.  (Don't Repeat Yourself)
+
+# Application architecture
+app/views/layouts/application.html.erb 
+# contains all of the template language
+# use the following to call the specific:
+<%= yield %>           >
+
+app/views/tweets/
+# contains specific ERB/HTML 
+
+
+# How to create a link
+# Recipe:
+<%= link_to text_to_show, model_instance %>
+>
+# Examples:
+<%= link_to tweet.zombie.name, zombie_path(tweet.zombie) %>
+>
+# or
+<%= link_to tweet.zombie.name, tweet.zombie %>
+# adding additional options
+>
+<%= link_to tweet.zombie.name, tweet.zombie, confirm: "Are you sure?" %>
+
+# Here goes nothing
+>
+
+<% tweets.each do |tweet| %>
+	<tr>
+		<td><%= link_to tweet.status, tweet %></td>
+		<td><%= tweet.zombie.name, tweet.zombie %></td>
+		<td><%= link_to "Edit", edit_tweet_path(tweet) %></td>
+		<td><%= link_to "Destroy", tweet, method: :delete %></td>
+	</tr>
+<% end %>           >
+
+# URL GENERATOR METHODS
+# ACTION          || CODE           || URL
+# List all tweets || tweets_path    || /tweets
+# New tweet form  || new_tweet_path || /tweets/new
+
+tweet = Tweet.find(1) # This path needs a specific tweet
+
+# Show a tweet    || tweet          || /tweets/1
+# Edit a tweet    || edit_tweet_path(tweet) || /tweets/1/edit
+# Delete a tweet  || tweet, method: :delete || /tweets/1
+
