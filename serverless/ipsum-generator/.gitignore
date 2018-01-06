@@ -1,3 +1,6 @@
+# general files
+.DS_STORE
+
 # package directories
 node_modules
 jspm_packages
