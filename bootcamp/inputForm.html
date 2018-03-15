@@ -5,11 +5,31 @@
     <title>Test Input</title>
   </head>
   <body>
-    <h1>Login</h1>
-    <form class="test" action="index.html" method="post">
-      <input type="text" name="Username: " value="">
-      <input type="password" name="Password: " value="">
-      <button type="button" name="button">login</button>
+    <h1>Sign In</h1>
+    <form>
+      <label for="username">Username: </label>
+      <input id="username" type="email" name="username" placeholder="username" value="" required>
+      <label for="password">Password: </label>
+      <input id="password" type="password" name="password" placeholder="password" value="" required>
+      <input type="submit" name="submit" value="submit">
+      <!-- <button type="button" name="button">login</button> -->
+    </form>
+
+    <h1>Do you prefer Cats or Dogs?</h1>
+    <form>
+      <label for="dogs">Dogs</label>
+      <input id="dogs" type="radio" name="petChoice" value="DOG">
+      <label for="cats">Cats</label>
+      <input id="cats" type="radio" name="petChoice" value="CAT">
+
+      <h1>What's your favorite color?</h1>
+      <select class="" name="color">
+        <option value="RED">Red</option>
+        <option value="ORANGE">Orange</option>
+        <option value="YELLOW">Yellow</option>
+      </select>
+
+      <button>Go!</button>
     </form>
   </body>
 </html>
