@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Test Sign Up Form</title>
+  </head>
+  <body>
+    <h1>Register</h1>
+    <form>
+      <!-- Name -->
+      <div class="">
+        <label for="firstname">First Name</label>
+        <input id="firstname" type="text" name="" value="" required>
+        <label for="lastname">Last Name</label>
+        <input id="lastname" type="text" name="" value="" required>
+      </div>
+
+      <!-- Gender -->
+      <div class="">
+        <label for="gender">Male</label>
+        <input id="male" type="radio" name="genderChoice" value="male">
+        <label for="female">Female</label>
+        <input id="female" type="radio" name="genderChoice" value="female">
+        <label for="other">Other</label>
+        <input id="other" type="radio" name="genderChoice" value="other">
+      </div>
+
+      <!-- Email -->
+      <div class="">
+        <label for="email">Email: </label>
+        <input id="email" type="email" name="" value="" required>
+      </div>
+
+      <!-- Password -->
+      <div class="">
+        <label for="password">Password: </label>
+        <!-- <input id="password" type="password" name="" value="" required minlength="5" maxlength="10"> -->
+        <input id="password" type="password" name="" value="" pattern=".{5,10}" required title="Password must be between 5 to 10 characters.">
+      </div>
+
+      <!-- Birthday -->
+      <div class="">
+        <label for="birthday">Birthday: </label>
+        <input id="birthday" type="date" name="birthday" value="">
+      </div>
+
+      <!-- TOC and Submit -->
+      <div class="">
+        <label for="toc">I agree to the terms and conditions</label>
+        <input id="toc" type="checkbox" name="toc" value="">
+        <input type="submit" name="submit" value="submit">
+      </div>
+    </form>
+  </body>
+</html>
