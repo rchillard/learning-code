@@ -1,0 +1,20 @@
+h1 {
+  /*border-color: purple;
+  border-width: 5px;
+  border-style: solid;*/
+
+  border: 8px dashed purple;
+  color: red;
+}
+
+body {
+  background: url(https://static.gamespot.com/uploads/original/536/5360430/3141756-screenshot0034.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.content {
+  background-color: rgb(255,255, 255);
+  background-color: rgba(255,255,255,.2);
+
+}
