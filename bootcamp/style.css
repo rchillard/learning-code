@@ -1,0 +1,26 @@
+p {
+
+/*Content - Width and Height is BLUE in Chrome Inspect*/
+width: 50%;
+height: 50%;
+
+/*Border*/
+border: 2px solid blue;
+
+/*Padding is GREEN in Chrome Inspect*/
+/*padding: 10px;*/
+padding-left: 10px;
+
+/*Margin is ORANGE in Chrome Inspect*/
+/*margin: 100px;*/
+/*margin: 100px;*/
+
+/*margin-top: 500px;*/
+/*margin-top: 500px;*/
+/*margin: 20px 40px 500px 100px;*/
+/*margin: 20px 40px 500px 100px;*/
+
+/*margin: 0 auto 0 auto;*/
+/*margin: 0 auto 0 auto;*/
+margin: 50px 20px;
+}
