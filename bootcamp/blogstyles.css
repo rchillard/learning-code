@@ -1,0 +1,31 @@
+body {
+  align-self: center;
+  border: 20px solid #bdc3c7;
+  margin: 20px auto;
+  font-family: Source Sans Pro;
+  width: 80%;
+}
+
+hr {
+  width: 95%;
+}
+
+.article {
+  margin: 2% auto;
+  padding: 5px 2.5% 10px 2.5%;
+}
+
+.article h1 + p {
+  border-left: 5px solid #bdc3c7;
+  padding-left: 5px;
+}
+
+.date {
+  color: #3498db;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+h2 {
+  color: #2c3e50;
+}
