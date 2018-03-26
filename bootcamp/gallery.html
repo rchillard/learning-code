@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Bootstrap Navbars</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet-iconic" href="open-iconic-bootstrap.css">
+    <style type="text/css">
+      body {
+        padding-top: 70px;
+      }
+
+      .camera-logo {
+        /*width: 100%;*/
+        height: 2rem;
+        padding-right: .5rem;
+        background-size: cover;
+        background-position: center;
+      }
+
+      .image {
+        width: 100%;
+        height: 250px;
+        background-size: cover;
+        background-position: center;
+      }
+
+      .image1 {
+        background-image: url(https://raw.githubusercontent.com/rchillard/learning-code/master/bootcamp/1_4%20View%20Flying.png);
+      }
+      .image2 {
+        background-image: url(https://raw.githubusercontent.com/rchillard/learning-code/master/bootcamp/3_4%20View%20Landed.png);
+      }
+      .image3 {
+        background-image: url(https://raw.githubusercontent.com/rchillard/learning-code/master/bootcamp/Carrack_Composite_BG.jpg);
+      }
+      .image4 {
+        background-image: url(https://raw.githubusercontent.com/rchillard/learning-code/master/bootcamp/Schematic%20-%20Front%20View.png);
+      }
+      .image5 {
+        background-image: url(https://raw.githubusercontent.com/rchillard/learning-code/master/bootcamp/Schematic%20-%20Side%20View.png);
+      }
+      .image6 {
+        background-image: url(https://raw.githubusercontent.com/rchillard/learning-code/master/bootcamp/3_4%20View%20Flying.png);
+      }
+
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <div class="container">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="#">Explorers Unite</a>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">Disabled</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav my-2 my-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Login <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Register</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="jumbotron">
+        <h1><img src="camera-slr.svg" class="camera-logo">Pictures of my Beautiful Spaceship</h1>
+        <p>This is going to be an amazing experience.</p>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-4 col-sm-6">
+          <div class="img-thumbnail">
+            <div class="image image1">
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+          <div class="img-thumbnail">
+            <div class="image image2">
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+          <div class="img-thumbnail">
+            <div class="image image3">
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+          <div class="img-thumbnail">
+            <div class="image image4">
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+          <div class="img-thumbnail">
+            <div class="image image5">
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+          <div class="img-thumbnail">
+            <div class="image image6">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
