@@ -1,8 +1,8 @@
 body {
   align-self: center;
   border: 20px solid #bdc3c7;
-  margin: 20px auto;
   font-family: Source Sans Pro;
+  margin: 20px auto;
   width: 80%;
 }
 
@@ -12,7 +12,7 @@ hr {
 
 .article {
   margin: 2% auto;
-  padding: 5px 2.5% 10px 2.5%;
+  padding: 5px 2.5% 5px 2.5%;
 }
 
 .article h1 + p {
@@ -22,10 +22,11 @@ hr {
 
 .date {
   color: #3498db;
-  letter-spacing: 2px;
+  letter-spacing: 0.2rem;
   text-transform: uppercase;
 }
 
-h2 {
+h1 {
   color: #2c3e50;
+  font-size: 2.0rem;
 }
