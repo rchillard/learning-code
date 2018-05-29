@@ -15,6 +15,10 @@ body {
   text-align: center;
 }
 
+button {
+  background-color: white;
+}
+
 #container {
   margin: 0 auto;
   max-width: 600px;
@@ -26,9 +30,13 @@ h1 {
 }
 
 .square {
-  background: purple;
+  background: #232323;
   float: left;
   margin: 1.66%;
   padding-bottom: 30%;
   width: 30%;
+}
+
+.selected {
+  background-color: gray;
 }
