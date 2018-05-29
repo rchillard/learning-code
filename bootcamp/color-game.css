@@ -1,39 +1,66 @@
 .banner {
   background-color: gray;
   margin: 0 auto;
-  padding: 2em;
+  padding: 0.5em;
 }
 
 body {
   background-color: #232323;
+  font-family: sans-serif;
+}
+
+#colorCode {
+  font-size: 200%;
 }
 
 .display {
   background-color: white;
+  height: 2em;
   margin: 0 auto;
-  padding: 0.5em;
   text-align: center;
 }
 
 button {
-  background-color: white;
+  background: none;
+  border: none;
+  font-family: sans-serif;
+  font-size: inherit;
+  font-weight: 700;
+  height: 100%;
+  outline: none;
+  text-transform: uppercase;
+  transition: all 0.3s;
+}
+
+button:hover {
+  background: gray;
+  color: white;
 }
 
 #container {
-  margin: 0 auto;
+  margin: 20px auto;
   max-width: 600px;
 }
 
 h1 {
   color: white;
+  font-family: sans-serif;
   text-align: center;
+  text-transform: uppercase;
+}
+
+#message {
+  display: inline-block;
+  width: 25%;
 }
 
 .square {
   background: #232323;
+  border-radius: 10%;
   float: left;
   margin: 1.66%;
   padding-bottom: 30%;
+  transition: background 0.5s;
   width: 30%;
 }
 
