@@ -7,39 +7,45 @@ var easyButton = document.querySelector('#easy')
 var mediumButton = document.querySelector('#medium')
 var hardButton = document.querySelector('#hard')
 
-resetButton.addEventListener('click', function () {
-  if (easyButton.classList.contains('selected')) {
+initializeGame()
+
+function initializeGame () {
+  resetButton.addEventListener('click', function () {
+    if (easyButton.classList.contains('selected')) {
+      generateBoard(3)
+    } else if (mediumButton.classList.contains('selected')) {
+      generateBoard(6)
+    } else if (hardButton.classList.contains('selected')) {
+      generateBoard(9)
+    } else {
+      window.alert('No valid game state detected!')
+    }
+    messageDisplay.textContent = 'A new game, good luck!'
+  })
+
+  easyButton.addEventListener('click', function () {
+    easyButton.classList.add('selected')
+    mediumButton.classList.remove('selected')
+    hardButton.classList.remove('selected')
     generateBoard(3)
-  } else if (mediumButton.classList.contains('selected')) {
+  })
+
+  mediumButton.addEventListener('click', function () {
+    mediumButton.classList.add('selected')
+    easyButton.classList.remove('selected')
+    hardButton.classList.remove('selected')
     generateBoard(6)
-  } else if (hardButton.classList.contains('selected')) {
+  })
+
+  hardButton.addEventListener('click', function () {
+    hardButton.classList.add('selected')
+    easyButton.classList.remove('selected')
+    mediumButton.classList.remove('selected')
     generateBoard(9)
-  } else {
-    window.alert('No valid game state detected!')
-  }
-  messageDisplay.textContent = 'A new game, good luck!'
-})
+  })
 
-easyButton.addEventListener('click', function () {
-  easyButton.classList.add('selected')
-  mediumButton.classList.remove('selected')
-  hardButton.classList.remove('selected')
-  generateBoard(3)
-})
-
-mediumButton.addEventListener('click', function () {
-  mediumButton.classList.add('selected')
-  easyButton.classList.remove('selected')
-  hardButton.classList.remove('selected')
   generateBoard(6)
-})
-
-hardButton.addEventListener('click', function () {
-  hardButton.classList.add('selected')
-  easyButton.classList.remove('selected')
-  mediumButton.classList.remove('selected')
-  generateBoard(9)
-})
+}
 
 function generateBoard (num) {
   // reset the Board
@@ -123,5 +129,3 @@ function changeColors (color, num) {
   bannerDisplay.style.backgroundColor = color
   // change each color to match given color
 }
-
-generateBoard(6)
