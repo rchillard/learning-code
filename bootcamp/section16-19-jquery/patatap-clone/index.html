@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Circle Up</title>
+    <link rel="stylesheet" href="circles.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.14/howler.js" charset="utf-8"></script>
+    <script type="text/javascript" src="../lib/paper-full.js" charset="utf-8"></script>
+    <script type="text/paperscript" canvas="myCanvas">
+
+    var keyData = {
+      q: { color: "purple", sound: new Howl({ src: ['sounds/bubbles.mp3']}) },
+      w: { color: "orange", sound: new Howl({ src: ['sounds/clay.mp3']}) },
+      e: { color: "green", sound: new Howl({ src: ['sounds/confetti.mp3']}) },
+      a: { color: "blue", sound: new Howl({ src: ['sounds/corona.mp3']}) },
+      s: { color: "white", sound: new Howl({ src: ['sounds/dotted-spiral.mp3']}) },
+      d: { color: "yellow", sound: new Howl({ src: ['sounds/flash-1.mp3']}) },
+      z: { color: "maroon", sound: new Howl({ src: ['sounds/prism-1.mp3']}) },
+      x: { color: "olive", sound: new Howl({ src: ['sounds/glimmer.mp3']}) },
+      c: { color: "lime", sound: new Howl({ src: ['sounds/zig-zag.mp3']}) }
+    }
+
+    var circles = [];
+
+      function onKeyDown(event) {
+        if(keyData[event.key]) {
+          var maxPoint = new Point(view.size.width, view.size.height);
+          var randomPoint = Point.random();
+          var point = maxPoint * randomPoint;
+          var newCircle = new Path.Circle(point, 500);
+
+          newCircle.fillColor = keyData[event.key].color;
+          keyData[event.key].sound.play();
+          circles.push(newCircle);
+        }
+        else {
+          console.log('do nothing!')
+        }
+      }
+
+      function onFrame(event) {
+        for (var i = 0; i < circles.length; i++) {
+          circles[i].fillColor.hue += 1;
+          circles[i].scale(.9);
+          if (circles[i].area < 1) {
+            circles[i].remove();
+            circles.splice(i, 1);
+            i--;
+            console.log(circles);
+          }
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <canvas id="myCanvas" resize></canvas>
+  </body>
+</html>
