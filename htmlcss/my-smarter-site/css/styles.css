@@ -9,13 +9,59 @@
   font-family: "Courier New", Courier, monospace;
 }
 
+.emphasis {
+  font-style: italic;
+}
+
+.red {
+  color: red;
+}
+
+.readable {
+  letter-spacing: 2em;
+  line-height: 2em;
+  word-spacing: 2em;
+}
+
+.bordered {
+  border: 5px inset red;
+}
+
+.bordered-crazy {
+  border-top: 5px inset red;
+  border-right: 5px inset blue;
+  border-bottom: 5px inset green;
+  border-left: 5px inset yellow;
+  padding: 5em;
+}
+
+h3 {
+  text-align: center;
+}
 
 p {
   font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 1.2em;
 }
 
+p.justified {
+  text-align: justify;
+}
+
+p.indented {
+  text-indent: 2em;
+}
+
+p.offset {
+  margin: 2em;
+}
+
 h1 {
   font-family: "Trebuchet MS", Helvetica, sans-serif;
   font-size: 1.2em;
+}
+
+blockquote {
+  font-size: 0.75em;
+  color: gray;
 }
