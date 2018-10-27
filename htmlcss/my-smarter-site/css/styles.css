@@ -40,6 +40,10 @@ div.indented {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+img.distinct {
+  display: block;
+}
+
 h2#orange {
   color: orange;
   text-align: center;
