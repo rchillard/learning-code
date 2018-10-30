@@ -44,6 +44,11 @@ img.distinct {
   display: block;
 }
 
+img.inset {
+  display: block;
+  margin-left: 5em;
+}
+
 h2#orange {
   color: orange;
   text-align: center;
