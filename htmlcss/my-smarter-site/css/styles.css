@@ -49,6 +49,13 @@ img.inset {
   margin-left: 5em;
 }
 
+img.smack-in-the-middle {
+  display: block;
+  float: left;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 h2#orange {
   color: orange;
   text-align: center;
