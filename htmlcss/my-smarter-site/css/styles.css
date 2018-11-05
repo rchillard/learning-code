@@ -56,6 +56,11 @@ img.smack-in-the-middle {
   margin-right: auto;
 }
 
+img.floats {
+  float: right;
+  margin: 0 2em 2em 2em;
+}
+
 h2#orange {
   color: orange;
   text-align: center;
@@ -87,6 +92,10 @@ p.offset {
   margin: 2em;
 }
 
+p.no-wrap {
+  clear: both;
+}
+
 h1 {
   font-family: "Trebuchet MS", Helvetica, sans-serif;
   font-size: 1.2em;
@@ -95,4 +104,13 @@ h1 {
 blockquote {
   font-size: 0.75em;
   color: gray;
+}
+
+a.funky:hover {
+  font-weight: bolder;
+  color: purple;
+}
+
+a.funky:active {
+  color: orange;
 }
