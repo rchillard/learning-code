@@ -11,7 +11,7 @@ export default ({ children }) => (
     <div style={{ margin: `0 auto`, maxWidth: 650, padding: `0 1rem` }}>
         <header style={{ marginBottom: `1.5rem` }}>
         <Link to="/" style={{ textShadow: `none`, backgroundImage: `none` }}>
-            <h3 style={{ display: `inline` }}>My Awesome Site</h3>
+            <h3 style={{ display: `inline` }}>My Awesome lsSite</h3>
         </Link>
         <ul style={{ listStyle: `none`, float: `right` }}>
             <ListLink to="/">Home</ListLink>
