@@ -1,0 +1,116 @@
+
+.important {
+  font-size: 1.5em;
+  font-weight: 900;
+}
+
+.typerwriter {
+  background-color: purple;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.emphasis {
+  font-style: italic;
+}
+
+.red {
+  color: red;
+}
+
+.readable {
+  letter-spacing: 2em;
+  line-height: 2em;
+  word-spacing: 2em;
+}
+
+.bordered {
+  border: 5px inset red;
+}
+
+.bordered-crazy {
+  border-top: 5px inset red;
+  border-right: 5px inset blue;
+  border-bottom: 5px inset green;
+  border-left: 5px inset yellow;
+  padding: 5em;
+}
+
+div.indented {
+  margin: 0 3em 0 3em;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+img.distinct {
+  display: block;
+}
+
+img.inset {
+  display: block;
+  margin-left: 5em;
+}
+
+img.smack-in-the-middle {
+  display: block;
+  float: left;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+img.floats {
+  float: right;
+  margin: 0 2em 2em 2em;
+}
+
+h2#orange {
+  color: orange;
+  text-align: center;
+}
+
+h3 {
+  text-align: center;
+}
+
+h4, p.dougie {
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+p {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 1.2em;
+}
+
+p.justified {
+  text-align: justify;
+}
+
+p.indented {
+  text-indent: 2em;
+}
+
+p.offset {
+  margin: 2em;
+}
+
+p.no-wrap {
+  clear: both;
+}
+
+h1 {
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  font-size: 1.2em;
+}
+
+blockquote {
+  font-size: 0.75em;
+  color: gray;
+}
+
+a.funky:hover {
+  font-weight: bolder;
+  color: purple;
+}
+
+a.funky:active {
+  color: orange;
+}
