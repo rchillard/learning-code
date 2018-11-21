@@ -23,6 +23,13 @@ class App extends Component {
             <AutoCompleteText />
           </div>
         </header>
+        <div>
+          <h2>Testing this Prettier thing</h2>
+          <h3>Does it work?</h3>
+          <p>Let's see what it does with these HTML tags</p>
+          <h3>Or is it inadequate?</h3>
+          <p>And let's see what happens when they're funky like this!</p>
+        </div>
       </div>
     );
   }
