@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import HideableText from './HideableText'
-import AutoCompleteText from './AutoCompleteText';
+import React, { Component } from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import HideableText from "./HideableText";
+import AutoCompleteText from "./AutoCompleteText";
 
 class App extends Component {
   render() {
