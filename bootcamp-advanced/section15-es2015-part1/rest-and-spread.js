@@ -9,7 +9,7 @@ Examples:
 */
 
 function smallestValue(...args) {
-    return Math.min(...args)
+  return Math.min(...args);
 }
 
 /* 
@@ -23,9 +23,9 @@ Examples:
 */
 
 function placeInMiddle(arr, vals) {
-    let mid = Math.floor(arr.length/2)
-    arr.splice(mid,0,...vals)
-    return arr
+  let mid = Math.floor(arr.length / 2);
+  arr.splice(mid, 0, ...vals);
+  return arr;
 }
 
 /* 
@@ -41,7 +41,7 @@ Examples:
 */
 
 function joinArrays(...args) {
-    return args.reduce((acc, next) => acc.concat(next), [])
+  return args.reduce((acc, next) => acc.concat(next), []);
 }
 
 /* 
@@ -54,13 +54,13 @@ Examples:
 */
 
 function sumEvenArgs(...args) {
-	var sum = 0;
-	for(let val of args) {
-	    if(val % 2 === 0) {
-    	    sum = sum + val
-        }
+  var sum = 0;
+  for (let val of args) {
+    if (val % 2 === 0) {
+      sum = sum + val;
     }
-  return sum
+  }
+  return sum;
 }
 
 /* 
@@ -93,12 +93,11 @@ Examples:
 
 */
 
-
-function flip(fn, thisArg, ...outerArgs){
-    return function(...innerArgs) {
-        let allArgs = outerArgs.concat(innerArgs).slice(0, fn.length)
-        return fn.apply(thisArg, allArgs.reverse())
-    }
+function flip(fn, thisArg, ...outerArgs) {
+  return function(...innerArgs) {
+    let allArgs = outerArgs.concat(innerArgs).slice(0, fn.length);
+    return fn.apply(thisArg, allArgs.reverse());
+  };
 }
 
 /* 
@@ -133,8 +132,8 @@ Examples:
 
 */
 
-function bind(fn, thisArg, ...outerArgs){
-    return function(...innerArgs) {
-        return fn.apply(thisArg, [...outerArgs, ...innerArgs])
-    }
+function bind(fn, thisArg, ...outerArgs) {
+  return function(...innerArgs) {
+    return fn.apply(thisArg, [...outerArgs, ...innerArgs]);
+  };
 }
