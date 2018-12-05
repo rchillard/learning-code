@@ -32,6 +32,7 @@ class MessageBoard {
 
   addMessage(str) {
     this.messages.set(this.id, str);
+    this.id = this.id + 1;
     return this;
   }
 
@@ -71,7 +72,12 @@ class MessageBoard {
     */
 
   findMessageByValue(str) {
-    return this.messages.forEach(x => (x === str ? x : undefined));
+    for (var value of this.messages.values()) {
+      if (value === str) {
+        return value;
+      }
+    }
+    return undefined;
   }
 
   /*
@@ -90,6 +96,7 @@ class MessageBoard {
 
   removeMessage(num) {
     this.messages.delete(num);
+    return this;
   }
 
   /*
@@ -176,21 +183,51 @@ function countPairs(arr, num) {
   return count;
 }
 
-console.log("Hello!");
+console.log("Starting program...");
 var m = new MessageBoard();
 
-m.hasOwnProperty("messages"); // true
-m.messages.constructor; // function Map() { [native code] }
-console.log(m.hasOwnProperty("id")); // true
-m.id; // 1
+// m.hasOwnProperty("messages"); // true
+// m.messages.constructor; // function Map() { [native code] }
+// console.log(m.hasOwnProperty("id")); // true
+// m.id; // 1
 
-var m = new MessageBoard();
-m.addMessage("hello!");
-m.addMessage("hi!");
-m.addMessage("whats up?");
-console.log(m.numberOfMessages());
-console.log(m.findMessageById(1)); // 'hello!'
-m.findMessageById(2); // 'hi!'
-m.findMessageById(3); // 'whats up?'
-m.findMessageById(4); // undefined
-m.findMessageById(); // undefined
+// m.addMessage("awesome!")
+//   .addMessage("nice!")
+//   .addMessage("cool!");
+
+// m.addMessage("hello!");
+// m.addMessage("hi!");
+
+// console.log("Have duplicates yet?");
+// console.log(hasDuplicates(m.messagesToArray()));
+
+// m.addMessage("whats up?");
+// m.addMessage("whats up?");
+// m.addMessage("whats up?");
+// m.addMessage("whats up?");
+// m.addMessage("whats up?");
+// m.addMessage("whats up?");
+// m.addMessage("whats up?");
+// console.log(m.numberOfMessages());
+// console.log(m.findMessageById(1)); // 'hello!'
+// console.log(m.findMessageById(2)); // 'hi!'
+// console.log(m.findMessageById(3)); // 'hi!'
+// console.log(m.findMessageById(4)); // 'hi!'
+// console.log(m.findMessageById()); // undefined
+// console.log(m);
+// console.log(m.messages.size);
+
+// console.log("Testing program...");
+
+// console.log(m.findMessageByValue("hello!")); // 'hello!'
+// console.log(m.findMessageByValue("hi!")); // 'hi!'
+// console.log(m.findMessageByValue("whats up?")); // 'whats up?'
+// console.log(m.findMessageByValue("nothing here")); // undefined
+// console.log(m.findMessageByValue()); // undefined
+
+// m.addMessage("whats up?");
+// m.addMessage("whats up?");
+// m.addMessage("whats up?");
+
+// console.log(uniqueValues(m.messagesToArray()));
+// console.log(hasDuplicates(m.messagesToArray()));
