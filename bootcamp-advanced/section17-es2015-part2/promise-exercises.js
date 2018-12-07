@@ -7,11 +7,11 @@
 // Hint - Try to use Promise.all to solve this and remember that the jQuery AJAX methods ($.getJSON, $.ajax, etc.) return a promise.
 
 // ATTEMPT
-function getMostFollowers(...args) {
+function* getMostFollowers(...args) {
   var promises = [];
   // Collect all the promises
   for (let val of args) {
-    promises.push(val => getFollowers(val));
+    yield promises.push(val => getFollowers(val));
   }
 
   console.log("THIS IS PROMISES!");
