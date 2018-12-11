@@ -8,8 +8,8 @@ o2.name // 'Tim'
 o.name // 'Elie'
 */
 
-function copyObject(obj){
-    return Object.assign(obj)
+function copyObject(obj) {
+  return Object.assign({}, obj);
 }
 
 /* 
@@ -23,8 +23,8 @@ checkIfFinite(NaN) // false
 checkIfFinite(Infinity) // false
 */
 
-function checkIfFinite(num){
-    return Number.isFinite(num)
+function checkIfFinite(num) {
+  return Number.isFinite(num);
 }
 
 /*
@@ -38,13 +38,18 @@ areAllNumbersFinite(finiteNums) // true
 areAllNumbersFinite(finiteNumsExceptOne) // false
 */
 
-function areAllNumbersFinite(arr){
-    for(let i = 0; i < arr.length; i++) {
-        if (!Number.isFinite(arr[i])) {
-            return false
-        }
+function areAllNumbersFinite(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    if (!Number.isFinite(arr[i])) {
+      return false;
     }
-    return true
+  }
+  return true;
+}
+
+// Solution
+function areAllNumbersFinite(arr) {
+  return arr.every(Number.isFinite);
 }
 
 /* 
@@ -59,8 +64,8 @@ var converted = convertArrayLikeObject(divs)
 converted.reduce // funciton(){}...
 */
 
-function convertArrayLikeObject(obj){
-    return Array.from(obj)
+function convertArrayLikeObject(obj) {
+  return Array.from(obj);
 }
 
 /*
@@ -73,15 +78,17 @@ displayEvenArguments(7,8,9) // [8]
 displayEvenArguments(1,3,7) // []
 */
 
-function displayEvenArguments(...args){
-    let newArr = []
-    for(let i = 0; i < args.length; i++) {
-        if (args[i] % 2 === 0) {
-            newArr.push(args[i])
-        }
+function displayEvenArguments(...args) {
+  let newArr = [];
+  for (let i = 0; i < args.length; i++) {
+    if (args[i] % 2 === 0) {
+      newArr.push(args[i]);
     }
-    return newArr
+  }
+  return newArr;
 }
 
-
-
+// Solution
+function displayEvenArguments() {
+  return Array.from(arguments).filter(val => vavl % 2 === 0);
+}
