@@ -1,26 +1,20 @@
 import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
+import Navbar from "./Navbar.js";
 import Recipe from "./Recipe.js";
+import Recipes from "./Recipes.js";
+import LISTOFRECIPES from "./listofrecipes.js";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Recipe
-          title="Tomato Pasta"
-          image="emiliano-vittoriosi-699338-unsplash.jpg"
-          ingredients={["Tomatoes", "Noodles", "Basil"]}
-          instructions={[
-            "Boil water on the stove",
-            "Mash the tomatoes",
-            "Chop the fresh basil",
-            "Pour noodles into boiling water",
-            "Cook for 5-6 minutes",
-            "Drain water from noodles",
-            "Combine tomatoes and basil in pot with noodles"
-          ]}
+        <Navbar
+          brand="RecipeSaver"
+          items={["Create Recipe", "List Recipes", "Search", "Logout"]}
         />
+        <Recipes recipes={LISTOFRECIPES} />
       </div>
     );
   }

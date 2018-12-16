@@ -1,7 +1,15 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import "./Recipe.css";
 
 class Recipe extends Component {
+  static defaultProps = {
+    title: "no recipe name",
+    image: "no image supplied",
+    ingredients: [],
+    instructions: []
+  };
+
   render() {
     const { title, image } = this.props;
     const ingredients = this.props.ingredients.map((ingredient, index) => (
@@ -22,5 +30,12 @@ class Recipe extends Component {
     );
   }
 }
+
+Recipe.propTypes = {
+  title: PropTypes.string,
+  image: PropTypes.string,
+  ingredients: PropTypes.array,
+  instructions: PropTypes.array
+};
 
 export default Recipe;
