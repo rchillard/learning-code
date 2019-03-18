@@ -7,4 +7,4 @@ I have discovered that in the intervening time period the world of web developme
 ## My Solution
 This repository is my solution to tracking that problem.  On the top level, you'll see folders for individual languages, core technologies, libraries, frameworks, and even wider, more categorical areas (e.g. serverless).  
 
-This repository is here for me, as my reference, and as part of my quest to learn in public and be unafraid of that.  If you want to follow more of my musings and how these projects relate, check out my blog [Learn, Build, Teach](https://rchillard.com/).
+This repository is here for me, as my reference, and as part of my quest to learn in public and be unafraid of that.  If you want to follow more of my musings and how these projects relate, check out [my blog](https://rchillard.com/).
