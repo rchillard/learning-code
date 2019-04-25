@@ -1,4 +1,4 @@
-<script>
+code <script>
 	import Nested from './Nested.svelte';
 </script>
 
