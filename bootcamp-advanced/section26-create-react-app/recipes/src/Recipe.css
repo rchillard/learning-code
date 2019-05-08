@@ -1,0 +1,11 @@
+.Recipe {
+    border: 1px solid black;
+    text-align: left;
+    margin: 1em;
+    padding: 1em;
+    width: 25%;
+}
+
+.Recipe img {
+    width: 15em;
+}

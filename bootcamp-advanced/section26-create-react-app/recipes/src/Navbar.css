@@ -1,0 +1,33 @@
+.Navbar {
+    background-color: lightgray;
+    height: 3em;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+.Brand {
+    display: inline;
+    font-size: 1.5em;
+    float: left;
+    padding: .5em;
+    text-align: left;
+}
+
+.Menu {
+    display: inline;
+    font-size: 1.25em;
+    float: right;
+    padding: .5em;
+    text-align: right;
+}
+
+.Menu ul {
+    display: inline;
+    list-style: none;
+}
+
+.Menu ul li {
+    display: inline;
+    padding-left: 1em;
+    padding-right: 1em;
+}

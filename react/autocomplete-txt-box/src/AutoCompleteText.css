@@ -1,0 +1,9 @@
+.AutoCompleteText {
+  border: 2p solid gray;
+  margin: 1em auto;
+  width: 100%;
+}
+
+.AutoCompleteText input {
+  width: 100%;
+}
