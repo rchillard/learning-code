@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tables 4</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        text-align: center;
+      }
+      th,
+      td {
+        border: 1px solid black;
+        padding: 0.25rem;
+        vertical-align: center;
+      }
+
+      td.num {
+        text-align: left;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th scope="row">Rank</th>
+          <th scope="col">Spaceship</th>
+          <th scope="col">Pilot</th>
+          <th scope="col">Max Speed</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Millenium Falcon</td>
+          <td>Han Solo</td>
+          <td class="num">3000 m/s</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Tie Fighter</td>
+          <td>Imperial Pilot</td>
+          <td class="num">2250 m/s</td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>Y-Wing</td>
+          <td>Rebel Pilot</td>
+          <td class="num">1500 m/s</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

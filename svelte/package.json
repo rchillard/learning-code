@@ -1,0 +1,12 @@
+{
+  "name": "svelte",
+  "version": "1.0.0",
+  "description": "Svelte is an exciting new approach to building frontends, using a compiler!  - https://svelte.dev/ - https://svelte.dev/tutorial/basics - https://github.com/sveltejs/svelte",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
