@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Form 5</title>
+  </head>
+  <body>
+    <form action="submit.php" method="POST">
+      Username: <input type="text" name="user" size="10" maxlength="15">
+      Password: <input type="password" name="password" size="10" maxlength="15">
+      <br /> <br />
+      Species: <br/>
+      <input type="radio" name="species" value="human" checked="checked">Human
+      <input type="radio" name="species" value="martian">Martian
+      <input type="radio" name="species" value="venutian">Venutian
+      <br /> <br />
+      Icecream Preference: <br />
+      <input type="checkbox" name="icecream" value="vanilla">Vanilla
+      <input type="checkbox" name="icecream" value="strawberry">Strawberry
+      <input type="checkbox" name="icecream" value="chocolate">Chocolate
+      <br /> <br />
+      Special Care: <br />
+      <textarea name="instructions" rows="5" cols="50">
+        Instructions
+      </textarea>
+    </form>
+  </body>
+</html>
