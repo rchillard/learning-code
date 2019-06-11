@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Form 7</title>
+  </head>
+  <body>
+    <form action="submit.php" method="POST">
+      Pokemon <input type="text" name="name" size="25" maxlength="20"> <br />
+      Secret phrase<input type="password" name="pass" size="20" maxlength="15"> <br />
+      Catching instructions <br />
+      Family 
+      <select name="element">
+        <option value="unselected">Select one</option>
+        <option value="air">Air</option>
+        <option value="fire">Fire</option>
+        <option value="earth">Earth</option>
+        <option value="water">Water</option>
+      </select> <br />
+      Instructions for catching <br />
+      <textarea name="description" rows="20" cols="50">
+
+      </textarea> <br />
+      Difficulty <br />
+      <input type="radio" id="hard" name="difficulty" value="Hard"><label for="hard">Hard</label> <br />
+      <input type="radio" id="medium" name="difficulty" value="Medium"><label for="medium">Medium</label> <br />
+      <input type="radio" id="low" name="difficulty" value="Low"><label for="low">Low</label> <br />
+      <br />
+      Attributes <br />
+      <label><input type="checkbox" name="attributes" value="special">special</label> <br />
+      <label><input type="checkbox" name="attributes" value="sparkles">sparkles</label> <br />
+      <label><input type="checkbox" name="attributes" value="silent">silent</label> <br />
+      <br />
+      <input type="submit" value="Register Pokemon">
+    </form>
+  </body>
+</html>
