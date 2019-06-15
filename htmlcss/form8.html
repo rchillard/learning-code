@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Form 8</title>
+    <style>
+      table {
+        border-collapse: collapse;
+      }
+
+      th, td {
+        padding: 0.25em;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="submit.php" method="POST">
+      <fieldset>
+        <legend>Login</legend>
+        <input type="text" name="name" size="20" maxlength="20"> <br />
+        <input type="password" name="pass" size="20" maxlength="20"> <br />
+        <input type="checkbox" name="remember">Remember login? <br />
+      </fieldset>
+      <fieldset>
+        <legend>Favorite Color</legend>
+        <input type="radio" name="favoritecolor">Red <br />
+        <input type="radio" name="favoritecolor">Orange <br />
+        <input type="radio" name="favoritecolor">Yellow <br />
+        <input type="radio" name="favoritecolor">Green <br />
+        <input type="radio" name="favoritecolor">Blue <br />
+        <input type="radio" name="favoritecolor">Indigo <br />
+        <input type="radio" name="favoritecolor">Violet <br />
+      </fieldset>
+      <input type="submit" value="Register">
+    </form>
+  </body>
+</html>
