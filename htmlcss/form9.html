@@ -3,37 +3,51 @@
   <head>
     <title>Form 9</title>
     <style>
+      /* Style the form legend and labels*/
       form {
         font-family: Verdana, Geneva, sans-serif;
         font-size: 1em;
         margin: 0 auto;
         width: 50%;
       }
+
+      /* Style individual input types of the form */
       input[type="text"], input[type="number"], input[type="radio"] {
         font-size: 1em;
         margin-bottom: .25em;
         padding: .25em;
       }
+
+      /* Style the submit button */
       input[type="submit"] {
         font-size: 1.25em;
       }
+
+      /* Style the boxes around fieldsets */
       fieldset {
         margin: 1em;
         padding: 1em;
       }
+
+      /* Specify a more specific style for the legend */
       legend {
         font-weight: 700;
       }
     </style>
   </head>
   <body>
+    <!-- Form to capture Pokemon details -->
     <form action="submit.php" method="POST">
+
+      <!-- Basic information fields -->
       <fieldset>
         <legend>Register</legend>
           <label>Pokemon: <input type="text" name="pokemon"></label> <br />
           <label>Trainer: <input type="text" name="trainer"></label> <br />
           <label>Level: <input type="number" name="level"></label> <br />
       </fieldset>
+
+      <!-- Element of the pokemon -->
       <fieldset>
         <legend>Element</legend>
           <label><input type="radio" name=element" value="unselected" checked="checked">N/A</label>
@@ -42,6 +56,8 @@
           <label><input type="radio" name="element" value="wind">Wind</label>
           <label><input type="radio" name="element" value="water">Water</label>
       </fieldset>
+
+      <!-- Notes and submit button from the trainer -->
       <fieldset>
         <legend>Trainer Notes</legend>
         <textarea rows="5" cols="100"></textarea>
