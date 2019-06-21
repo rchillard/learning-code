@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Layout 1</title>
+    <style>
+      body {
+        color: black;
+        font-size: 1em;
+        margin: 1em auto 1em auto;
+        width: 90%
+      }
+      .navbar {
+        display: inline;
+      }
+      .main {
+        margin: 0 auto;
+        width: 60%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <img src="" alt="logo" width="50px">
+      <span>Layout Site</span>
+    </div>
+    <div class="navbar">
+      <ul>
+        <li>Home</li>
+        <li>Trainer</li>
+        <li>Arena</li>
+        <li>Contact</li>
+        <li>About</li>
+      </ul>
+    </div>
+    <div class="main">
+      <div class="sidebar">
+        <ul>
+            <li>Home</li>
+            <li>Trainer</li>
+            <li>Arena</li>
+            <li>Contact</li>
+            <li>About</li>
+          </ul>
+      </div>
+      <div class="content">
+        <!-- Form to capture Pokemon details -->
+        <h1>Submit new registrant</h1>
+        <p>Use this form to submit a new registrant for consideration in PokeBattle, the premiere place to have CSS pokemon fight each other!</p>
+        <form action="submit.php" method="POST">
+
+          <!-- Basic information fields -->
+          <fieldset>
+            <legend>Register</legend>
+              <label>Pokemon: <input type="text" name="pokemon"></label> <br />
+              <label>Trainer: <input type="text" name="trainer"></label> <br />
+              <label>Level: <input type="number" name="level"></label> <br />
+          </fieldset>
+    
+          <!-- Element of the pokemon -->
+          <fieldset>
+            <legend>Element</legend>
+              <label><input type="radio" name=element" value="unselected" checked="checked">N/A</label>
+              <label><input type="radio" name="element" value="fire">Fire</label>
+              <label><input type="radio" name="element" value="earth">Earth</label>
+              <label><input type="radio" name="element" value="wind">Wind</label>
+              <label><input type="radio" name="element" value="water">Water</label>
+          </fieldset>
+    
+          <!-- Notes and submit button from the trainer -->
+          <fieldset>
+            <legend>Trainer Notes</legend>
+            <textarea rows="5" cols="100"></textarea>
+            <input type="submit" value="Capture Field Notes">
+          </fieldset>
+        </form>
+      </div>
+    </div>
+    <div class="footer">
+      <p>Property of PokeBattle, Inc.</p>
+      <p>Copyright 2094</p>
+    </div>
+  </body>
+</html>
