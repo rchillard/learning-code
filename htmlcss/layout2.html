@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Layout 1</title>
+    <style>
+      body {
+        color: black;
+        font-size: 1em;
+        margin: 1em auto 1em auto;
+        width: 90%;
+      }
+      .header {
+        background-color: orangered;
+        left: 0;
+        position: fixed;
+        top: 0;
+        width: 100%;
+      }
+      .header h2 {
+        color: white;
+        font-family: Verdana, Geneva, sans-serif;
+        font-size: 2em;
+        font-weight: 900;
+        margin-left: 4%;
+      }
+      .header img {
+        float: left;
+        margin: 1em 1em 0 1em;
+      }
+      .navbar {
+        display: inline;
+      }
+      .main {
+        margin: 0 auto;
+        width: 80%;
+      }
+      .content {
+        float: left;
+        width: 60%;
+      }
+      .sidebar {
+        float: right;
+        width: 30%;
+      }
+      .no-wrap {
+        clear: both;
+      }
+      .footer {
+        background-color: orangered;
+        bottom: 0;
+        color: whitesmoke;
+        font-family: Verdana, Geneva, sans-serif;
+        font-size: 1.2em;
+        left: 0;
+        position: absolute;
+        width: 100%;
+      }
+      .footer p {
+        margin-left: 4%;
+        margin-right: 4%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <img src="pokebattle-logo-solgaleo.png" alt="logo" width="50px" />
+      <h2>PokeBattle 2.0</h2>
+    </div>
+    <div class="navbar">
+      <ul>
+        <li>Home</li>
+        <li>Trainer</li>
+        <li>Arena</li>
+        <li>Contact</li>
+        <li>About</li>
+      </ul>
+    </div>
+    <div class="main">
+      <div class="sidebar">
+        <ul>
+          <li>Home</li>
+          <li>Trainer</li>
+          <li>Arena</li>
+          <li>Contact</li>
+          <li>About</li>
+        </ul>
+      </div>
+      <div class="content">
+        <h1>About PokeBattle</h1>
+        <p>
+          Pokem ipsum dolor sit amet Electrode I know it's my destiny Silcoon
+          Electivire Slowpoke Chatot. Fog Badge Silph Scope Misdreavus Groudon
+          Girafarig Heatmor Rapidash. Ivysaur Beheeyem Chandelure Exeggutor
+          Gothitelle Nidoqueen Lairon. Bubble Hoenn anim id est laborum
+          MysteryBerry Sealeo Sapphire Glalie. Mineral Badge Probopass Kyogre
+          Arceus Petilil Meowth Metang.
+        </p>
+
+        <p>
+          Bug Yamask Sunkern Kabutops Pichu Vibrava Pokemon The Movie 2000.
+          Cascade Badge Mothim Cresselia Chandelure Dragon in a world we must
+          defend Eelektrik. Johto in voluptate velit esse cillum dolore eu
+          fugiat nulla pariatur Registeel Fire Grovyle Roggenrola Wailord.
+          Dragon Murkrow Wigglytuff Tail Whip Combee Kakuna Chatot. Blue they're
+          comfy and easy to wear Pineco Lanturn Luxray Cubchoo Farfetch'd.
+        </p>
+
+        <p>
+          <Ivysaur Gold Dialga Sunkern Slakoth Dusknoir Silver. Fire Razor Leaf
+          Claydol Slowpoke Mawile Feraligatr Landorus. Ice Prinplup Clamperl
+          Bronzor Togetic Lillipup Ekans. Dragon Ponyta Lavender Town Houndour
+          Ruby Ralts Goldeen. Sapphire Pawniard Snorlax Lunatone Clamperl
+          Galvantula Heatmor.
+        </p>
+
+        <p>
+          Body Slam Snivy Magneton the enemy Pokemon fainted Cascoon ex ea
+          commodo consequat Phione. Lorem ipsum dolor sit amet Shaymin Keldeo
+          Ralts Scizor Pokemon Toxicroak. Psychic Tyranitar Jigglypuff Aggron
+          Numel Piplup Burnt Berry. Normal Calcium Clefairy Pokemon Fan Club
+          Chairman Rotom I'm on the road to Viridian City Sunkern. Fire Red
+          Chimchar Chandelure Storm Badge Togepi Slowpoke Zephyr Badge.
+        </p>
+
+        <p>
+          Leech Seed Goldeen Lillipup Celadon City Keldeo Cradily searching far
+          and wide. Consectetur adipisicing elit Machop Pineco Croagunk Mint
+          Berry Altaria they're comfy and easy to wear. Sinnoh Beldum Solrock
+          Joltik Beartic Dusknoir Magikarp. Lavender Town Sunkern Weavile Aipom
+          Ledyba Illumise Cascoon. Flamethrower Fraxure Wailord Magikarp used
+          Splash Luxray Shiftry Satoshi Tajiri.
+        </p>
+        <!-- Form to capture Pokemon details -->
+        <h1>Submit new registrant</h1>
+        <p>
+          Use this form to submit a new registrant for consideration in
+          PokeBattle, the premiere place to have CSS pokemon fight each other!
+        </p>
+        <form action="submit.php" method="POST">
+          <!-- Basic information fields -->
+          <fieldset>
+            <legend>Register</legend>
+            <label>Pokemon: <input type="text" name="pokemon"/></label> <br />
+            <label>Trainer: <input type="text" name="trainer"/></label> <br />
+            <label>Level: <input type="number" name="level"/></label> <br />
+          </fieldset>
+
+          <!-- Element of the pokemon -->
+          <fieldset>
+            <legend>Element</legend>
+            <label
+              ><input type="radio" name=element" value="unselected"
+              checked="checked">N/A</label
+            >
+            <label
+              ><input type="radio" name="element" value="fire" />Fire</label
+            >
+            <label
+              ><input type="radio" name="element" value="earth" />Earth</label
+            >
+            <label
+              ><input type="radio" name="element" value="wind" />Wind</label
+            >
+            <label
+              ><input type="radio" name="element" value="water" />Water</label
+            >
+          </fieldset>
+
+          <!-- Notes and submit button from the trainer -->
+          <fieldset>
+            <legend>Trainer Notes</legend>
+            <textarea rows="5" cols="100"></textarea>
+            <input type="submit" value="Capture Field Notes" />
+          </fieldset>
+        </form>
+      </div>
+    </div>
+    <div class="no-wrap"></div>
+    <div class="footer">
+      <p style="float: left">Property of PokeBattle, Inc.</p>
+      <p style="float: right">Copyright 2094</p>
+    </div>
+  </body>
+</html>
