@@ -5,12 +5,14 @@
     <style>
       body {
         color: black;
+        font-family: Verdana, Geneva, sans-serif;
         font-size: 1em;
         margin: 1em auto 1em auto;
         width: 90%;
       }
       .header {
         background-color: orangered;
+        height: 5em;
         left: 0;
         position: fixed;
         top: 0;
@@ -18,24 +20,34 @@
       }
       .header h2 {
         color: white;
-        font-family: Verdana, Geneva, sans-serif;
+        display: inline-block;
         font-size: 2em;
         font-weight: 900;
         margin-left: 4%;
+        vertical-align: middle;
       }
       .header img {
         float: left;
         margin: 1em 1em 0 1em;
       }
-      .navbar {
-        display: inline;
+      .header ul {
+        color: whitesmoke;
+        display: inline-block;
+        list-style-type: none;
+        vertical-align: middle;
+      }
+      .header li {
+        font-size: 1.2em;
+        float: right;
+        padding-right: 1em;
       }
       .main {
-        margin: 0 auto;
+        margin: 5em auto 0 auto;
         width: 80%;
       }
       .content {
         float: left;
+        margin-bottom: 5em;
         width: 60%;
       }
       .sidebar {
@@ -49,10 +61,10 @@
         background-color: orangered;
         bottom: 0;
         color: whitesmoke;
-        font-family: Verdana, Geneva, sans-serif;
         font-size: 1.2em;
         left: 0;
-        position: absolute;
+        margin-top: 5em;
+        position: fixed;
         width: 100%;
       }
       .footer p {
@@ -65,8 +77,6 @@
     <div class="header">
       <img src="pokebattle-logo-solgaleo.png" alt="logo" width="50px" />
       <h2>PokeBattle 2.0</h2>
-    </div>
-    <div class="navbar">
       <ul>
         <li>Home</li>
         <li>Trainer</li>
@@ -75,6 +85,7 @@
         <li>About</li>
       </ul>
     </div>
+
     <div class="main">
       <div class="sidebar">
         <ul>
