@@ -28,6 +28,7 @@
 
     nav li {
       display: inline-block;
+      padding-right: 1em;
     }
 
     main {
@@ -56,6 +57,17 @@
     footer p {
       float: right;
       padding-right: 2em;
+    }
+
+    label {
+      padding-right: 1em;
+    }
+
+    input[type="submit"] {
+      background-color: rgb(76, 86, 106);
+      color: whitesmoke;
+      font-size: 1em;
+      padding: .5em 1em .5em 1em;
     }
   </style>
 </head>
@@ -101,6 +113,22 @@
         odit quam voluptatibus sed doloremque temporibus minus distinctio fugiat tempora nisi dignissimos, sequi, facere
         at earum.</p>
     </ol>
+    <h2>Inquire</h2>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium officiis doloribus eum vel. Itaque voluptas
+      nostrum quasi sint accusantium molestiae magnam nemo nobis doloremque, quod eligendi. Vitae, at. Aut, natus!</p>
+    <form action="sign-up.php" method="POST">
+      <fieldset>
+        <legend>Sign Up</legend>
+        <label>Handle <input type="text" name="handle" size="10" maxlength="15"></label>
+        <label>Magicword<input type="password" name="magicword" size="10" maxlength="15"></label>
+        <label>Dark arts? <input type="checkbox" name="darkarts"></label>
+        <input type="submit" value="Register">
+      </fieldset>
+    </form>
+    <h3>Disclosure</h3>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum animi expedita dolore, error fugit aperiam,
+      enim porro alias consectetur tempore mollitia nihil facilis sed fugiat ea laudantium dignissimos sapiente
+      delectus!</p>
   </main>
   <footer>
     <h3>Candle Shop Inc.</h3>
