@@ -54,6 +54,12 @@
       padding-left: 2em;
     }
 
+    .geo {
+      color: darkgray;
+      display: inline-block;
+      padding-left: 5em;
+    }
+
     footer p {
       float: right;
       padding-right: 2em;
@@ -132,8 +138,44 @@
   </main>
   <footer>
     <h3>Candle Shop Inc.</h3>
+    <div class="geo">
+      <h4 id="demo">Unloaded</h4>
+    </div>
     <p>Copyright 2019</p>
   </footer>
+
+  <script>
+    var doc = document.getElementById("demo")
+    function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showCurrentLocation, showError);
+      }
+    }
+
+    function showCurrentLocation(position) {
+      var latitude = position.coords.latitude;
+      var longitude = position.coords.longitude;
+      doc.innerHTML = `LAT: ${latitude} ,  LONG: ${longitude}`;
+    }
+    function showError(error) {
+      switch (error.code) {
+        case error.PERMISSION_DENIED:
+          doc.innerHTML = "Denied";
+          break;
+        case error.POSITION_UNAVAILABLE:
+          doc.innerHTML = "Unavailable";
+          break;
+        case error.TIMEOUT:
+          doc.innerHTML = "Timed out";
+          break;
+        case error.UNKNOWN_ERROR: coords
+          doc.innerHTML = "Unknown error";
+          break;
+      }
+    }
+
+    getLocation();
+  </script>
 </body>
 
 </html>
