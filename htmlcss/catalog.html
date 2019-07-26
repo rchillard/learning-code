@@ -1,15 +1,53 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <base href="https://www.htmlcatalog.com/">
     <meta charset="UTF-8">
     <title>Catalog of HTML Tags</title>
+    <base href="https://www.htmlcatalog.com/">
     <style>
       body {
+        font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
         margin: 0 auto;
         width: 90%;
       }
       textarea {
+        width: 100%;
+      }
+
+      #layout {
+        border: 1px solid lightgray;
+        padding: 1rem;
+        margin: 0 auto;
+        width: 95%;
+      }
+      #header {
+        background-color: lightblue;
+        height: 5rem;
+        padding-top: .25rem;
+        width: 100%;
+      }
+      #wrapper {
+        overflow: hidden;
+        width: 100%;
+      }
+      #main {
+        background-color: lightgoldenrodyellow;
+        float: left;
+        height: 20rem;
+        padding-top: .25rem;
+        width: 70%;
+      }
+      #aside {
+        background-color: lightsalmon;
+        float: left;
+        height: 20rem;
+        padding-top: .25rem;
+        width: 30%;
+      }
+      #footer {
+        background-color: lightgreen;
+        height: 5rem;
+        padding-top: .25rem;
         width: 100%;
       }
     </style>
@@ -33,5 +71,57 @@
       But how do you embed one textarea inside of another?  Won't the browser think the first closing &lt;/textarea&gt; tag is real and close the actual textarea?
       Yes, exactly.  That's true! In order to get around this special case, you have escape the opening tag (left arrow) or &lt; with a special sequence of characters.
     </p>
+    <h2>Types of Tags</h2>
+    <ul>
+      <li>Normal tags</li>
+      <li>Self closing tags</li>
+    </ul>
+    <h2>Types of Elements</h2>
+    <p>HTML is divided into different types of elements, each family of which serves a purpose in structuring content for the user.  Some elements organize, Some
+    elements denote, some add tabular structures, while others allow you to submit data or interact with the page. Here are the different kinds of elements:</p>
+    <ul>
+      <li>Metadata</li>
+      <li>Sectioning</li>
+      <li>Text content</li>
+      <li>Text semantics</li>
+      <li>Multimedia</li>
+      <li>Embedded</li>
+      <li>Scripting</li>
+      <li>Edits</li>
+      <li>Tables</li>
+      <li>Forms</li>
+      <li>Interactive</li>
+      <li>Web Components</li>
+    </ul>
+    <h3>Metadata</h3>
+    <h3>Sectioning</h3>
+    <p>Sectioning elements are used to organize a document into logical pieces.  Think of this as your document's outline.  Elements give logical structure not
+       visual structure.  I've depicted it visually below, so you can get a general sense for how <em>most</em> pages employ these elements.  However, there's no
+       relationship between HTML <em>logical structure</em> and how it's visually presented.  Just conventions:
+    </p>
+    <div id="layout">
+      <p>body</p>
+      <div id="header">
+        <p>header</p>
+        <p style="text-align: center">nav</p>
+      </div>
+      <div id="wrapper">
+        <div id="main">
+          <p>main</p>
+          <h1>h1</h1>
+          <h2>h2</h2>
+          <h3>h3</h3>
+          <h4>h4</h4> 
+          <h5>h5</h5>
+          <h6>h6</h6>
+        </div>
+        <div id="aside">
+          <p>aside</p>
+        </div>
+      </div>
+      <div id="footer">
+        <p>footer</p>
+      </div>
+    </div>
   </body>
 </html>
