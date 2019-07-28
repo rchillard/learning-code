@@ -4,8 +4,22 @@ import Form from "./Form";
 
 class App extends Component {
   state = {
-    characters: []
+    characters: [],
+    data: []
   };
+
+  componentDidMount() {
+    const url =
+      "https://en.wikipedia.org/w/api.php?action=opensearch&search=Seona+Dancing&format=json&origin=*";
+
+    fetch(url)
+      .then(result => result.json())
+      .then(result => {
+        this.setState({
+          data: result
+        });
+      });
+  }
 
   handleSubmit = character => {
     this.setState({ characters: [...this.state.characters, character] });
@@ -22,7 +36,11 @@ class App extends Component {
   };
 
   render() {
-    const { characters } = this.state;
+    const { characters, data } = this.state;
+
+    const result = data.map((entry, index) => {
+      return <li key={index}>{entry}</li>;
+    });
 
     return (
       <div className="container">
@@ -32,6 +50,8 @@ class App extends Component {
           removeCharacter={this.removeCharacter}
         />
         <Form handleSubmit={this.handleSubmit} />
+        <h2>Sample lifecycle method response</h2>
+        <ul>{result}</ul>
       </div>
     );
   }
