@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Serverless File Upload Demonstration</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+  </head>
+  <body>
+    <header>
+      <h1>Serverless File Upload Demonstration</h1>
+    </header>
+    <main>
+      <section id="explanation">
+        <p>
+          This form demonstrates uploading a file and then receiving it and processing it using the following technology:
+          <ul>
+            <li>index.html - form to be distributed on any form of static hosting (e.g. S3)</li>
+            <li>index.js - serverless function hosted in Function-as-a-Service offering (e.g. Lambda)</li>
+          </ul>
+        </p>
+        <h2>Form</h2>
+        <p>
+          <form action="https://tg25kdrbt9.execute-api.us-east-2.amazonaws.com/default/example-parse-file-upload" method="POST" enctype="multipart/form-data">
+            <input type="file" name="attachment"><br>
+            <input type="submit">
+          </form>
+        </p>
+        <h2>Code</h2>
+        <p>This page's code, as well as the Lambda code that receives the response, can be found below:</p>
+      </section>
+      <section id="client">
+        <h3>Client (index.html)</h3>
+        <textarea rows="15">
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sample form</title>
+  </head>
+  <body>
+    <form action="https://your-api-gateway-endpoint-here/" 
+          method="POST">
+      <label>name: <input type="text" name="name"></label>
+      <input type="submit">
+    </form>
+  </body>
+</html>
+        </textarea>
+      </section>
+      <section id="server">
+        <h3>Server (index.js)</h3>
+        <textarea rows="15">
+const querystring= require('querystring')
+
+exports.handler = async (event) => {
+    const data = querystring.parse(Buffer.from(event.body, 'base64').toString('utf-8'))
+    const name = data.name
+
+    const response = {
+        statusCode: 200,
+        body: JSON.stringify(`Hello ${name}!`),
+    };
+    return response;
+};
+        </textarea>
+      </section>
+    </main>
+    <footer>
+      <p>
+        Check out more examples by reading <a href="https://rch.fyi/">my blog</a>
+      </p>
+    </footer>
+  </body>
+</html>
