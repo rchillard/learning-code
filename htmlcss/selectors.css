@@ -1,0 +1,26 @@
+/* css specificity 
+
+  element       = 0,0,1
+  classes       = 0,1,0
+  ids           = 1,0,0
+  attributes    = ?,?,?
+  inline-styles = beats above
+  !important = beats all
+
+*/
+
+h1 {
+  color: blue;
+}
+
+.classio {
+  color: green;
+}
+
+#spanio {
+  color: orange;
+}
+
+[data-selector="attributio"] {
+  color: purple;
+}
