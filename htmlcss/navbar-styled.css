@@ -1,0 +1,31 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+nav ul {
+  display: flex;
+  font-family: sans-serif;
+  justify-content: space-around;
+  list-style: none;
+  padding: 0;
+  text-transform: uppercase;
+  width: 70%;
+}
+
+.sitename {
+  color: darkolivegreen;
+  font: normal 500 36px sans-serif;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+@media (max-width: 900px) {
+  nav {
+    display: block;
+  }
+
+  nav ul {
+    display: block;
+  }
+}
