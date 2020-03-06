@@ -1,0 +1,30 @@
+h1 {
+  font: italic 500 48px sans-serif;
+  transition: 1s;
+  opacity: 1;
+}
+
+h2 {
+  visibility: hidden;
+}
+
+h3 {
+  display: none;
+}
+
+h4 {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+.background {
+  /* 
+  background: url("pokebattle-logo-solgaleo.png");
+  background: url("./pokebattle-logo-solgaleo.png");
+  background-size: cover;
+  */
+
+  background: radial-gradient(crimson, skyblue) fixed;
+}
