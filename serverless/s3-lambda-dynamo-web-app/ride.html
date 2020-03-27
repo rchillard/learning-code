@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>Wild Rydes</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Serverless web application example">
+    <meta name="author" content="">
+</head>
+
+<body>
+    <header>
+        <h1>Apply</h1>
+    </header>
+    <main>
+        <form action="https://e501807xzl.execute-api.us-east-2.amazonaws.com/prod" method="POST">
+            <label>Legal Business Name: <input type="text" name="legalbusinessname"></label>
+            <label>EIN: <input type="number" name="ein"></label>
+            <label>Address: <input type="text" name="address1"></label>
+            <label>City: <input type="text" name="city"></label>
+            <label>State: <input type="text" name="state"></label>
+            <label>Zip: <input type="number" name="zip"></label>
+            <label>Country: <input type="text" name="country"></label>
+            <label>Bank Routing Number: <input type="text" name="bankroutingnumber"></label>
+            <label>Bank Account Number: <input type="text" name="bankaccountnumber"></label>
+            <label>Bank Account Type: <input type="text" name="bankaccounttype"></label>
+            <input type="submit">
+        </form>
+    </main>
+    <footer>
+
+    </footer>
+
+    <script src="js/vendor/jquery-3.1.0.js"></script>
+    <script src="js/vendor/aws-cognito-sdk.min.js"></script>
+    <script src="js/vendor/amazon-cognito-identity.min.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/cognito-auth.js"></script>
+    <!-- <script src="js/ride.js"></script> -->
+</body>
+
+</html>
