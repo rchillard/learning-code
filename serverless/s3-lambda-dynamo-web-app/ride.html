@@ -14,19 +14,39 @@
 <body>
     <header>
         <h1>Apply</h1>
+        <p>You're logged in now!</p>
+        <p>Try accessing this same page from a private browser window, if you don't believe me</p>
+        <p>Here's your auth token:</p>
+        <div id="authTokenModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="authToken">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Your Auth Token</h4>
+                    </div>
+                    <div class="modal-body">
+                        <textarea class="authToken"></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </header>
     <main>
+        <p>This is a sample form that does NOT work</p>
         <form action="https://e501807xzl.execute-api.us-east-2.amazonaws.com/prod" method="POST">
-            <label>Legal Business Name: <input type="text" name="legalbusinessname"></label>
-            <label>EIN: <input type="number" name="ein"></label>
-            <label>Address: <input type="text" name="address1"></label>
-            <label>City: <input type="text" name="city"></label>
-            <label>State: <input type="text" name="state"></label>
-            <label>Zip: <input type="number" name="zip"></label>
-            <label>Country: <input type="text" name="country"></label>
-            <label>Bank Routing Number: <input type="text" name="bankroutingnumber"></label>
-            <label>Bank Account Number: <input type="text" name="bankaccountnumber"></label>
-            <label>Bank Account Type: <input type="text" name="bankaccounttype"></label>
+            <label>Legal Business Name: <input type="text" name="legalbusinessname"></label><br/>
+            <label>EIN: <input type="number" name="ein"></label><br/>
+            <label>Address: <input type="text" name="address1"></label><br/>
+            <label>City: <input type="text" name="city"></label><br/>
+            <label>State: <input type="text" name="state"></label><br/>
+            <label>Zip: <input type="number" name="zip"></label><br/>
+            <label>Country: <input type="text" name="country"></label><br/>
+            <label>Bank Routing Number: <input type="text" name="bankroutingnumber"></label><br/>
+            <label>Bank Account Number: <input type="text" name="bankaccountnumber"></label><br/>
+            <label>Bank Account Type: <input type="text" name="bankaccounttype"></label><br/>
             <input type="submit">
         </form>
     </main>
