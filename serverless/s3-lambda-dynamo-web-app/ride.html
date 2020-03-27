@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
-    <title>Wild Rydes</title>
+    <title>Form</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,29 +13,38 @@
 
 <body>
     <header>
-        <h1>Apply</h1>
+    </header>
+    <main>
         <p>You're logged in now!</p>
-        <p>Try accessing this same page from a private browser window, if you don't believe me</p>
-        <p>Here's your auth token:</p>
-        <div id="authTokenModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="authToken">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel">Your Auth Token</h4>
-                    </div>
-                    <div class="modal-body">
-                        <textarea class="authToken"></textarea>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
+        <p>This page would have a real form on it</p>
+    
+        <div id="noApiMessage" class="configMessage" style="display: none;">
+            <div class="backdrop"></div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Successfully Authenticated!</h3>
+                </div>
+                <div class="panel-body">
+                    <p>This page is not functional yet because there is no API invoke URL configured in <a href="/js/config.js">/js/config.js</a>. You'll configure this in Module 3.</p>
+                    <p>In the meantime, if you'd like to test the Amazon Cognito user pool authorizer for your API, use the auth token below:</p>
+                    <textarea class="authToken"></textarea>
                 </div>
             </div>
         </div>
-    </header>
-    <main>
-        <p>This is a sample form that does NOT work</p>
+    
+        <div id="noCognitoMessage" class="configMessage" style="display: none;">
+            <div class="backdrop"></div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">No Cognito User Pool Configured</h3>
+                </div>
+                <div class="panel-body">
+                    <p>There is no user pool configured in <a href="/js/config.js">/js/config.js</a>. You'll configure this in Module 2 of the workshop.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- <p>This is a sample form that does NOT work</p>
         <form action="https://e501807xzl.execute-api.us-east-2.amazonaws.com/prod" method="POST">
             <label>Legal Business Name: <input type="text" name="legalbusinessname"></label><br/>
             <label>EIN: <input type="number" name="ein"></label><br/>
@@ -48,7 +57,7 @@
             <label>Bank Account Number: <input type="text" name="bankaccountnumber"></label><br/>
             <label>Bank Account Type: <input type="text" name="bankaccounttype"></label><br/>
             <input type="submit">
-        </form>
+        </form> -->
     </main>
     <footer>
 
