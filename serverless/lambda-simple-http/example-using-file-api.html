@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Example using File API</title>
+  </head>
+  <body>
+    <h1>Example using File API</h1>
+    <p>This example shows how to use the native DOM File API from HTML5 to:</p>
+    <ol>
+      <li>Update the form action attribute after the file change event</li>
+      <li>Display a list of file names ready to be uploaded</li>
+    </ol>
+    <form id="form" action="https://your-api-gateway-endpoint-here/" method="POST">
+      <label>files: <input id="input" type="file" name="files" multiple></label>
+      <input type="submit">
+    </form>
+    <h2>Form Action</h2>
+    <p id="action"></p>
+    <h2>File List</h2>
+    <ul id="files">
+
+    </ul>
+    <script>
+      const formElement = document.getElementById("form")
+      const inputElement = document.getElementById("input")
+      const actionElement = document.getElementById("action")
+      const filesElement = document.getElementById("files")
+
+      actionElement.innerText = formElement.getAttribute("action")
+
+      inputElement.addEventListener("change", handleFiles, false)
+      function handleFiles() {
+        const fileList = this.files
+        formElement.setAttribute("action", "https://your-presigned-s3-url-here/")
+
+        for (let i = 0, numFiles = fileList.length; i < numFiles; i++) {
+          let fileNode = document.createElement("LI")
+          fileNode.innerText = fileList[i].name
+          filesElement.appendChild(fileNode)
+        }
+
+        actionElement.innerText = formElement.getAttribute("action")
+      }
+    </script>
+  </body>
+</html>
