@@ -21,13 +21,35 @@
 
     </ul>
     <script>
+      // Gather elements
       const formElement = document.getElementById("form")
       const inputElement = document.getElementById("input")
       const actionElement = document.getElementById("action")
       const filesElement = document.getElementById("files")
 
-      actionElement.innerText = formElement.getAttribute("action")
+      // Store form element action as API
+      const API = formElement.getAttribute("action")
 
+      // Display initial state of form element action
+      actionElement.innerText = API
+
+      // TO DO
+      // Still need to handle response
+      function getPresignedUrl() {
+        fetch(API, {
+          headers: { "Content-Type": "application/json; charset=utf-8" },
+          method: "POST",
+          body: JSON.stringify({
+            passphrase: pass
+          })
+        })
+        .then(function(response) {
+          console.log(response);
+          return response.json();
+        })
+      }
+
+      // Handle event where input type=file changes
       inputElement.addEventListener("change", handleFiles, false)
       function handleFiles() {
         const fileList = this.files
@@ -41,6 +63,8 @@
 
         actionElement.innerText = formElement.getAttribute("action")
       }
+
+
     </script>
   </body>
 </html>
