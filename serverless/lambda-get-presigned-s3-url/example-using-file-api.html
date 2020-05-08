@@ -56,7 +56,7 @@
         formElement.setAttribute("action", "https://your-presigned-s3-url-here/")
 
         for (let i = 0, numFiles = fileList.length; i < numFiles; i++) {
-          let fileNode = document.createElement("LI")
+          let fileNode = document.createElement("li")
           fileNode.innerText = fileList[i].name
           filesElement.appendChild(fileNode)
         }
