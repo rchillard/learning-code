@@ -76,3 +76,43 @@ docClient.batchGet({
         console.log(JSON.stringify(data, null, 2));
     }
 });
+
+
+// More Examples
+
+// Query all songs by artist Arturus Ardvarkian with the Document Client
+async function logSongsByArtistDdbDc(){
+    try {
+        var params = {
+            KeyConditionExpression: 'artist = :artist',
+            ExpressionAttributeValues: {
+                ':artist': 'Arturus Ardvarkian'
+            },
+            TableName: tableName
+        };
+        var result = await ddbDocumentClient.query(params).promise()
+        console.log(JSON.stringify(result))
+    } catch (error) {
+        console.error(error);
+    }
+}
+logSongsByArtistDdbDc()
+
+// Query all songs by artist Arturus Ardvarkian that start with "C" using the Document Client
+async function logArtistSongsStartingWithCDdbDc(){
+    try {
+        var params = {
+            KeyConditionExpression: 'artist = :artist AND begins_with ( song , :song )',
+            ExpressionAttributeValues: {
+                ':artist': 'Arturus Ardvarkian',
+                ':song': 'C'
+            },
+            TableName: tableName
+        };
+        var result = await ddbDocumentClient.query(params).promise()
+        console.log(JSON.stringify(result))
+    } catch (error) {
+        console.error(error);
+    }
+}
+logArtistSongsStartingWithCDdbDc()
