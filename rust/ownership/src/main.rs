@@ -20,6 +20,17 @@ fn main() {
 
     let ref_sum: i32 = 25;
     println!("{}", add_ref_numbers(50, 100, &ref_sum));
+
+    let mut hellostr = String::from("hello");
+    let friendstr = String::from("friend");
+    concat_strings(&hellostr, &friendstr);
+
+    greeting(&mut hellostr);
+    println!("{}", hellostr);
+
+    let my_string = String::from("hello, universe");
+    let first_sstring = first_word(&my_string);
+    println!("{}", first_sstring.to_string());
 }
 
 fn add_numbers(x: i32, y: i32) -> i32 {
@@ -29,4 +40,24 @@ fn add_numbers(x: i32, y: i32) -> i32 {
 fn add_ref_numbers(x: i32, y: i32, s: &i32) -> i32 {
     println!("{}", s);
     x + y
+}
+
+fn concat_strings(str1: &String, str2: &String) {
+    println!("{}{}", str1, str2);
+}
+
+fn greeting(s: &mut String) {
+    s.push_str(" world");
+}
+
+fn first_word(s: &str) -> &str {
+    let bytes = s.as_bytes();
+
+    for (i, &item) in bytes.iter().enumerate() {
+        if item == b' ' {
+            return &s[0..i];
+        }
+    }
+
+    &s[..]
 }
