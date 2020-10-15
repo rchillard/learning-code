@@ -15,7 +15,8 @@ fn main() {
 }
 
 #[derive(Debug)]
-struct Sword {
+struct Sword {Sword { damage_minimum: 1, damage_maximum: 3, durability: 100, wield_type: "one-handed" }
+Sword { damage_minimum: 1, damage_maximum: 4, durability: 100, wield_type: "one-handed" }
     damage_minimum: i32,
     damage_maximum: i32,
     durability: i32,
