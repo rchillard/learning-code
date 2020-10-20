@@ -15,4 +15,3 @@ function download(filename, text) {
   
 // Start file download.
 download("hello.txt","This is the content of my file :)");
-  
