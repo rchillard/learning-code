@@ -30,16 +30,18 @@
 	<textarea id="text"></textarea>
 
     <p>You've written <strong><span id="character-count">0</span> characters</strong>.</p>
+    <p>You've written <strong><span id="word-count">0</span> words</strong>.</p>
 
 	<script>
 		// Store input element and counter element as variables
         var inputTextbox = document.querySelector("#text");
         var characterCounter = document.querySelector("#character-count");
+        var wordCounter = document.querySelector('#word-count');
 
         // Attach eventlistener to input and store count as characters are typed
         inputTextbox.addEventListener('input', function(event) {
-            var characterCount = inputTextbox.value.length;
-            characterCounter.textContent = characterCount;
+            characterCounter.textContent = inputTextbox.value.length;
+            wordCounter.textContent = inputTextbox.value.trim(' ').split(' ').length;
         })
 	</script>
 </body>
