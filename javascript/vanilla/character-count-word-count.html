@@ -41,7 +41,7 @@
         // Attach eventlistener to input and store count as characters are typed
         inputTextbox.addEventListener('input', function(event) {
             characterCounter.textContent = inputTextbox.value.length;
-            wordCounter.textContent = inputTextbox.value.trim(' ').split(' ').length;
+            wordCounter.textContent = inputTextbox.value.trim().split(/[\s]+/g).length;
         })
 	</script>
 </body>
