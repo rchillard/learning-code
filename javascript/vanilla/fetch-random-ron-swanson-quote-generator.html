@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Random Ron</title>
+
+	<style type="text/css">
+		body {
+			margin: 1em auto;
+			max-width: 40em;
+			width: 88%;
+		}
+        blockquote {
+            min-height: 10em;
+        }
+	</style>
+</head>
+<body>
+
+	<h1>Random Ron</h1>
+
+	<blockquote></blockquote>
+
+	<p>
+		<button>More Ron</button>
+	</p>
+
+	<script>
+        // Store the element that we will display the quote in
+        var outputQuote = document.querySelector('blockquote');
+
+        // Call the API to retrieve a quote
+		var fetchQuote = function() { 
+            fetch('https://ron-swanson-quotes.herokuapp.com/v2/quotes').then(function(response) {
+            // The API call was successful, so check if response is valid (200)
+            if(response.ok) {
+                // Return the response by casting the object to JSON, sending to the .then block
+                return response.json();
+            } else {
+                // Since the response was NOT ok, reject the promise, sending to the .catch block
+                return Promise.reject(response);
+            }
+        }).then(function(data) {
+            // data is the JSON response
+            outputQuote.textContent = data;
+        }).catch(function(err) {
+            // err is the raw response
+            var errJSON = err.json();
+            console.warn(err.status + ": " + err.statusText, err)
+        })};
+
+        // Load the initial quote
+        fetchQuote();
+
+        // Store the element used to ask for a new quote
+        var inputButton = document.querySelector('button');
+
+        // Load a new quote when the button is pressed
+        inputButton.addEventListener('click', function(event) {
+            fetchQuote();
+        })
+	</script>
+</body>
+</html>
