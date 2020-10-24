@@ -28,19 +28,18 @@
 
 	<label for="text">Enter your text below.</label>
 	<textarea id="text"></textarea>
-
-    <p aria-live="polite">You've written <strong><span id="word-count">0 words</span></strong> with <strong><span id="character-count">0 characters</span></strong>.</p>
+    <p id="count" aria-live="polite">You've written 0 words with 0 characters.</p>
 
 	<script>
 		// Store input element and counter element as variables
         var inputTextbox = document.querySelector("#text");
-        var characterCounter = document.querySelector("#character-count");
-        var wordCounter = document.querySelector('#word-count');
+        var outputCounter = document.querySelector("#count");
 
         // Attach eventlistener to input and store count as characters are typed
         inputTextbox.addEventListener('input', function(event) {
-            characterCounter.textContent = inputTextbox.value.length + " characters";
-            wordCounter.textContent = inputTextbox.value.trim().split(/[\s]+/g).length + " words";
+            var characterCounter = inputTextbox.value.length;
+            var wordCounter = inputTextbox.value.trim().split(/[\s]+/g).length;
+			outputCounter.textContent = "You've written " + wordCounter + " words with " + characterCounter + " characters."
         })
 	</script>
 </body>
