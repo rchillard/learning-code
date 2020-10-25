@@ -17,9 +17,10 @@
 </head>
 <body>
 
-	<h1>Random Ron</h1>
+    <h1>Random Ron</h1>
+    <img src="ron-swanson.jpg" alt="Photographed portrait of Ron Swanson in a brown suit jacket" width="100%">
 
-	<blockquote></blockquote>
+	<blockquote aria-live="polite"></blockquote>
 
 	<p>
 		<button>More Ron</button>
@@ -56,9 +57,7 @@
         var inputButton = document.querySelector('button');
 
         // Load a new quote when the button is pressed
-        inputButton.addEventListener('click', function(event) {
-            fetchQuote();
-        })
+        inputButton.addEventListener('click', fetchQuote, false);
 	</script>
 </body>
 </html>
