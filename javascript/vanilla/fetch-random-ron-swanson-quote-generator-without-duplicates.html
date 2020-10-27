@@ -52,6 +52,10 @@
                 previousQuotes.push(data[0]);
                 outputQuote.textContent = data[0];
             }
+
+            if(previousQuotes.length > 50) {
+                previousQuotes.shift();
+            }
         }).catch(function(err) {
             // err is the raw response
             var errJSON = err.json();
