@@ -25,6 +25,18 @@
 
         var app = document.querySelector('#app');
 
+        var render = function(articles) {
+            var html = '';
+            articles.forEach(function(article) {
+                html +=
+                '<article>' +
+                    '<h2><a href="' + article["url"] + '">' + article["title"] + '</a></h2>' +
+                    '<p>' + article["abstract"] + '</p>' +
+                '</article>'
+            })
+            app.innerHTML = html;
+        }
+
         fetch(API_URL).then(function(response) {
             // response received from API
             if(response.ok) {
@@ -37,12 +49,13 @@
         }).then(function(data) {
             // data is JSON, so do work
             console.log(data);
-            data.results.forEach(function(result) {
-                app.innerHTML = app.innerHTML + "<h2><a href=''" + result["url"] + "'>" + result["title"] + "</a></h2>" + "<p>" + result["abstract"] + "</p>"
-            })
+            render(data.results);
+            // data.results.forEach(function(result) {
+            //     app.innerHTML = app.innerHTML + "<h2><a href=''" + result["url"] + "'>" + result["title"] + "</a></h2>" + "<p>" + result["abstract"] + "</p>"
+            // })
         }).catch(function(err) {
             // log out error
-            console.warn(err.json());
+            console.warn(err);
         })
 	</script>
 </body>
