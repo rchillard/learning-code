@@ -43,11 +43,11 @@
             articles.forEach(function(article) {
                 html +=
                 '<article>' +
-                    '<h2><a href="' + article["url"] + '">' + article["title"] + '</a></h2>' +
-                    '<p>' + article["abstract"] + '</p>' +
+                    '<h2><a href="' + sanitizeHTML(article["url"]) + '">' + sanitizeHTML(article["title"]) + '</a></h2>' +
+                    '<p>' + sanitizeHTML(article["abstract"]) + '</p>' +
                 '</article>'
             })
-            app.innerHTML = sanitizeHTML(html);
+            app.innerHTML = html;
         }
 
         fetch(API_URL).then(function(response) {
