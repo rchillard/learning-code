@@ -25,6 +25,10 @@
             padding: 1em;
         }
 
+        .hidden {
+            display: none;
+        }
+
         /**
 		 * Make sure images scale
 		 */
@@ -83,6 +87,26 @@
 
         };
 
+        /**
+        * Element.closest() polyfill
+        * https://developer.mozilla.org/en-US/docs/Web/API/Element/closest#Polyfill
+        */
+        if (!Element.prototype.closest) {
+            if (!Element.prototype.matches) {
+                Element.prototype.matches = Element.prototype.msMatchesSelector || Element.prototype.webkitMatchesSelector;
+            }
+            Element.prototype.closest = function (s) {
+                var el = this;
+                var ancestor = this;
+                if (!document.documentElement.contains(el)) return null;
+                do {
+                    if (ancestor.matches(s)) return ancestor;
+                    ancestor = ancestor.parentElement;
+                } while (ancestor !== null);
+                return null;
+            };
+        }
+
         // The monsters and socks
         var monsters = [
             'monster1',
@@ -99,6 +123,14 @@
             'sock'
         ];
 
+        function revealMonster(event) {
+            console.log(event)
+            // event.target.classList.add("hidden");
+            // var monster = event.target.closest('img');
+            // console.log(monster);
+            // monster.classList.remove("hidden");
+        }
+
         // Your code goes here...
         var appElement = document.querySelector("#app");
         var shuffledMonsters = shuffle(monsters.slice());
@@ -107,9 +139,25 @@
         console.log(typeof (shuffledMonsters));
         var html = '';
         shuffledMonsters.forEach(function (monster) {
-            html = html + '<div class="grid"><img alt="drawing of a ' + ((monster === 'sock') ? "sock" : "monster") + '" src="monsters/' + monster + '.svg"></img></div>';
+            html = html + '<div class="grid">' +
+                   '<img alt="drawing of a ' + ((monster === 'sock') ? "sock" : "monster") + '" class="hidden" src="monsters/' + monster + '.svg"></img>' +
+                   '<img alt="drawing of a door" src="monsters/door.svg"></img>' +
+                   '</div>';
         })
         appElement.innerHTML = html;
+
+        appElement.addEventListener('click', function (event) {
+            var cell = event.target.closest('div');
+            var thingBehindDoor = cell.querySelector('.hidden')
+            thingBehindDoor.classList.toggle('hidden');
+            event.target.classList.toggle('hidden');
+            if (thingBehindDoor.getAttribute('src') === 'monsters/sock.svg') {
+                console.log('You lose!')
+            } else {
+                document.querySelectorAll()
+            }
+        });
+
     </script>
 </body>
 
