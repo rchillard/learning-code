@@ -107,7 +107,7 @@
         console.log(typeof(shuffledMonsters));
         var html = '';
         shuffledMonsters.forEach(function (monster) {
-            html = html + '<img src="monsters/' + monster + '.svg"></img>';
+            html = html + '<div class="grid"><img src="monsters/' + monster + '.svg"></img></div>';
         })
         appElement.innerHTML = html;
     </script>
