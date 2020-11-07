@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Monsters!</title>
+
+    <style type="text/css">
+        body {
+            margin: 1em auto;
+            max-width: 40em;
+            width: 88%;
+        }
+
+        /**
+		 * A simple grid layout
+		 */
+        .row {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            text-align: center;
+        }
+
+        .grid {
+            min-height: 6em;
+            padding: 1em;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /**
+		 * Make sure images scale
+		 */
+        img {
+            height: auto;
+            max-width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Monsters!</h1>
+
+    <div class="row" id="app"></div>
+
+    <footer>
+        <hr>
+        <p class="text-small text-muted">Icons by <a href="https://thenounproject.com/term/door/311732/">Jamie
+                Dickinson</a>, <a href="https://thenounproject.com/term/monster/184225/">Nicky Knicky</a>, <a
+                href="https://thenounproject.com/term/monster/1510400/">Alvaro Cabrera</a>, <a
+                href="https://thenounproject.com/term/monster/28460/">Eliricon</a>, <a
+                href="https://thenounproject.com/term/monster/82823/">April Yang</a>, <a
+                href="https://thenounproject.com/term/monster/1062009/">tk66</a>, <a
+                href="https://thenounproject.com/term/monster/24990/">Alex WaZa</a>, <a
+                href="https://thenounproject.com/term/monster/37212/">Husein Aziz</a>, <a
+                href="https://thenounproject.com/term/monster/2236082">iconcheese</a>, and <a
+                href="https://thenounproject.com/term/socks/38451/">Yazmin Alanis</a>.</p>
+    </footer>
+
+    <script>
+        /**
+        * Randomly shuffle an array
+        * https://stackoverflow.com/a/2450976/1293256
+        * @param  {Array} array The array to shuffle
+        * @return {String}      The first item in the shuffled array
+        */
+        var shuffle = function (array) {
+
+            var currentIndex = array.length;
+            var temporaryValue, randomIndex;
+
+            // While there remain elements to shuffle...
+            while (0 !== currentIndex) {
+                // Pick a remaining element...
+                randomIndex = Math.floor(Math.random() * currentIndex);
+                currentIndex -= 1;
+
+                // And swap it with the current element.
+                temporaryValue = array[currentIndex];
+                array[currentIndex] = array[randomIndex];
+                array[randomIndex] = temporaryValue;
+            }
+
+            return array;
+
+        };
+
+        /**
+        * Element.closest() polyfill
+        * https://developer.mozilla.org/en-US/docs/Web/API/Element/closest#Polyfill
+        */
+        if (!Element.prototype.closest) {
+            if (!Element.prototype.matches) {
+                Element.prototype.matches = Element.prototype.msMatchesSelector || Element.prototype.webkitMatchesSelector;
+            }
+            Element.prototype.closest = function (s) {
+                var el = this;
+                var ancestor = this;
+                if (!document.documentElement.contains(el)) return null;
+                do {
+                    if (ancestor.matches(s)) return ancestor;
+                    ancestor = ancestor.parentElement;
+                } while (ancestor !== null);
+                return null;
+            };
+        }
+
+        // The monsters and socks
+        var monsters = [
+            'monster1',
+            'monster2',
+            'monster3',
+            'monster4',
+            'monster5',
+            'monster6',
+            'monster7',
+            'monster8',
+            'monster9',
+            'monster10',
+            'monster11',
+            'sock'
+        ];
+
+        function revealMonster(event) {
+            console.log(event)
+            // event.target.classList.add("hidden");
+            // var monster = event.target.closest('img');
+            // console.log(monster);
+            // monster.classList.remove("hidden");
+        }
+
+        // Your code goes here...
+        var appElement = document.querySelector("#app");
+        var shuffledMonsters = shuffle(monsters.slice());
+        console.log(monsters);
+        console.log(shuffledMonsters);
+        console.log(typeof (shuffledMonsters));
+        var html = '';
+        shuffledMonsters.forEach(function (monster) {
+            html = html + '<div class="grid">' +
+                   '<img alt="drawing of a ' + ((monster === 'sock') ? "sock" : "monster") + '" class="hidden" src="monsters/' + monster + '.svg"></img>' +
+                   '<img alt="drawing of a door" src="monsters/door.svg"></img>' +
+                   '</div>';
+        })
+        appElement.innerHTML = html;
+
+        appElement.addEventListener('click', function (event) {
+            var cell = event.target.closest('div');
+            var thingBehindDoor = cell.querySelector('.hidden')
+            thingBehindDoor.classList.toggle('hidden');
+            event.target.classList.toggle('hidden');
+            if (thingBehindDoor.getAttribute('src') === 'monsters/sock.svg') {
+                console.log('You lose!')
+            } else {
+                document.querySelectorAll()
+            }
+        });
+
+    </script>
+</body>
+
+</html>

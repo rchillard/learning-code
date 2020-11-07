@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>What to read today</title>
+
+    <style type="text/css">
+        body {
+            margin: 1em auto;
+            max-width: 80em;
+            width: 88%;
+        }
+
+        main {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>What to read today</h1>
+    </header>
+
+    <main>
+        <div class="content"></div>
+        <div class="content"></div>
+        <div class="content"></div>
+    </main>
+    <script>
+        /**
+         * Sanitize and encode all HTML in a user-submitted string
+         * https://portswigger.net/web-security/cross-site-scripting/preventing
+         * @param  {String} str  The user-submitted string
+         * @return {String} str  The sanitized string
+         */
+        var sanitizeHTML = function (str) {
+            return str.replace(/[^\w. ]/gi, function (c) {
+                return '&#' + c.charCodeAt(0) + ';';
+            });
+        };
+
+        // This is a secret
+        var API_KEY = "TLAH8CEENWAEk8tf1ZbFVP8o1WYHCMcf";
+        var API_URL = "https://api.nytimes.com/svc/mostpopular/v2/emailed/7.json?api-key=" + API_KEY;
+        var categories = "arts, automobiles, books, business, fashion, food, health, home, insider, magazine, movies, nyregion, obituaries, opinion, politics, realestate, science, sports, sundayreview, technology, theater, t-magazine, travel, upshot, us, world";
+        categories = categories.split(" ").join("");
+        var CATEGORIES = categories.split(",");
+        console.log(CATEGORIES);
+
+        var app = document.querySelector('#app');
+
+        function getRandomCategory() {
+            return Math.floor(Math.random() * CATEGORIES.length);
+        }
+
+        var render = function (category, articles, element) {
+            var html = '<h2>' + category + '<h2>';
+            articles.forEach(function (article) {
+                html +=
+                    '<article>' +
+                    '<h3><a href="' + sanitizeHTML(article["url"]) + '">' + sanitizeHTML(article["title"]) + '</a></h3>' +
+                    '<p>' + sanitizeHTML(article["abstract"]) + '</p>' +
+                    '</article>'
+            })
+            element.innerHTML = html;
+        }
+
+        var retrieveData = function (category, element) {
+            var dataURL = "https://api.nytimes.com/svc/topstories/v2/" + category + ".json" + "?api-key=" + API_KEY;
+            fetch(dataURL).then(function (response) {
+                // response received from API
+                if (response.ok) {
+                    // error code == 200
+                    return response.json();
+                } else {
+                    // error code != 200
+                    return Promise.reject(response);
+                }
+            }).then(function (data) {
+                // data is JSON, so do work
+                console.log(data);
+                render(category, data.results, element);
+            }).catch(function (err) {
+                // log out error
+                console.warn(err);
+            })
+        }
+
+        var renderPage = function () {
+            var contentDivs = document.querySelectorAll(".content");
+            console.log(contentDivs);
+            contentDivs = Array.prototype.slice.call(contentDivs);
+            contentDivs.forEach(function (div) {
+                retrieveData(CATEGORIES[getRandomCategory()], div)
+            })
+        }
+
+        renderPage();
+    </script>
+</body>
+
+</html>
