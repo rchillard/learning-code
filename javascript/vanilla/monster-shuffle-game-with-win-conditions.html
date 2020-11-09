@@ -46,6 +46,9 @@
 	<h1>Monsters! - Game</h1>
 
 	<div id="app"></div>
+	<div id="score">
+		<p>Wins: 0, Losses: 0</p>
+	</div>
 
 	<footer>
 		<hr>
@@ -75,7 +78,9 @@
 
 		// Get the #app element
 		var app = document.querySelector('#app');
-
+		var score = document.querySelector('#score');
+		var wins = 0;
+		var losses = 0;
 
 		//
 		// Methods
@@ -127,10 +132,22 @@
 			// Since we're going to replace the event.target, we need to do this
 			var grid = monster.parentNode;
 
+			// Check if it was actually a sock
+			if (monsters[id] === 'sock') {
+				if (document.querySelectorAll("button").length > 1) {
+					losses++;
+				} else {
+					wins++;
+				}
+				// if (document.querySelectorAll("button[src='/monsters/door.svg'")) {
+					// console.log(document.querySelectorAll("button[src='/monsters/door.svg'"))
+				// }
+				score.textContent = "Wins: " + wins + ", Losses: " + losses;
+			}
 			// Update the HTML for the button's parent element
 			// This will replace the button so that the content can't be clicked again
 			// We'll use the id to get the monster from our shuffled array
-			grid.innerHTML = '<img alt="' + monsters[id] + '" src="' + monsters[id] + '.svg">';
+			grid.innerHTML = '<img alt="' + monsters[id] + '" src="/monsters/' + monsters[id] + '.svg">';
 
 		};
 
@@ -152,7 +169,7 @@
 					var html =
 						'<div class="grid" aria-live="polite">' +
 							'<button data-monster-id="' + index + '">' +
-								'<img alt="Click the door to see what\'s behind it" src="door.svg">' +
+								'<img alt="Click the door to see what\'s behind it" src="/monsters/door.svg">' +
 							'</button>' +
 						'</div>';
 					return html;
