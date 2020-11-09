@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>Monsters! - Game</title>
 
@@ -41,6 +42,7 @@
 		}
 	</style>
 </head>
+
 <body>
 
 	<h1>Monsters! - Game</h1>
@@ -49,10 +51,19 @@
 	<div id="score">
 		<p>Wins: 0, Losses: 0</p>
 	</div>
-
+	<button id="reset">Reset Game</button>
 	<footer>
 		<hr>
-		<p class="text-small text-muted">Icons by <a href="https://thenounproject.com/term/door/311732/">Jamie Dickinson</a>, <a href="https://thenounproject.com/term/monster/184225/">Nicky Knicky</a>, <a href="https://thenounproject.com/term/monster/1510400/">Alvaro Cabrera</a>, <a href="https://thenounproject.com/term/monster/28460/">Eliricon</a>, <a href="https://thenounproject.com/term/monster/82823/">April Yang</a>, <a href="https://thenounproject.com/term/monster/1062009/">tk66</a>, <a href="https://thenounproject.com/term/monster/24990/">Alex WaZa</a>, <a href="https://thenounproject.com/term/monster/37212/">Husein Aziz</a>, <a href="https://thenounproject.com/term/monster/2236082">iconcheese</a>, and <a href="https://thenounproject.com/term/socks/38451/">Yazmin Alanis</a>.</p>
+		<p class="text-small text-muted">Icons by <a href="https://thenounproject.com/term/door/311732/">Jamie
+				Dickinson</a>, <a href="https://thenounproject.com/term/monster/184225/">Nicky Knicky</a>, <a
+				href="https://thenounproject.com/term/monster/1510400/">Alvaro Cabrera</a>, <a
+				href="https://thenounproject.com/term/monster/28460/">Eliricon</a>, <a
+				href="https://thenounproject.com/term/monster/82823/">April Yang</a>, <a
+				href="https://thenounproject.com/term/monster/1062009/">tk66</a>, <a
+				href="https://thenounproject.com/term/monster/24990/">Alex WaZa</a>, <a
+				href="https://thenounproject.com/term/monster/37212/">Husein Aziz</a>, <a
+				href="https://thenounproject.com/term/monster/2236082">iconcheese</a>, and <a
+				href="https://thenounproject.com/term/socks/38451/">Yazmin Alanis</a>.</p>
 	</footer>
 
 	<script>
@@ -118,7 +129,10 @@
 		 * @param  {Event} event The event object
 		 */
 		var clickHandler = function (event) {
-
+			// Reset game if button clicked
+			if ((event.target.getAttribute('id')) === "reset") {
+				initializeGame();
+			}
 			// Check if clicked element or it's parent has a [data-monster-id] attribute
 			// If not, it's not a monster
 			// return and stop running our callback function
@@ -134,14 +148,11 @@
 
 			// Check if it was actually a sock
 			if (monsters[id] === 'sock') {
-				if (document.querySelectorAll("button").length > 1) {
+				if (document.querySelectorAll("img[src='/monsters/door.svg']").length > 1) {
 					losses++;
 				} else {
 					wins++;
 				}
-				// if (document.querySelectorAll("button[src='/monsters/door.svg'")) {
-					// console.log(document.querySelectorAll("button[src='/monsters/door.svg'"))
-				// }
 				score.textContent = "Wins: " + wins + ", Losses: " + losses;
 			}
 			// Update the HTML for the button's parent element
@@ -156,28 +167,33 @@
 		// Inits & Event Listeners
 		//
 
-		// Shuffle the monsters array
-		shuffle(monsters);
+		function initializeGame() {
+			// Shuffle the monsters array
+			shuffle(monsters);
 
-		// Create the HTML and inject it into the DOM
-		// A button element is focusable and conveys to screen readers that it can be clicked
-		// The data-monster-id stores the index of the monster in our array
-		app.innerHTML =
-			'<p>Click a door to reveal a monster. Try not to find the sock.</p>' +
-			'<div class="row">' +
+			// Create the HTML and inject it into the DOM
+			// A button element is focusable and conveys to screen readers that it can be clicked
+			// The data-monster-id stores the index of the monster in our array
+			app.innerHTML =
+				'<p>Click a door to reveal a monster. Try not to find the sock.</p>' +
+				'<div class="row">' +
 				monsters.map(function (monster, index) {
 					var html =
 						'<div class="grid" aria-live="polite">' +
-							'<button data-monster-id="' + index + '">' +
-								'<img alt="Click the door to see what\'s behind it" src="/monsters/door.svg">' +
-							'</button>' +
+						'<button data-monster-id="' + index + '">' +
+						'<img alt="Click the door to see what\'s behind it" src="/monsters/door.svg">' +
+						'</button>' +
 						'</div>';
 					return html;
 				}).join('') +
-			'</div>';
+				'</div>';
+		}
+
+		initializeGame();
 
 		// Listen for click events
 		document.addEventListener('click', clickHandler, false);
 	</script>
 </body>
+
 </html>
