@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Weather App</title>
+
+    <style type="text/css">
+        body {
+            margin: 1em auto;
+            max-width: 30em;
+            width: 88%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Weather App</h1>
+
+    <div id="app">Checking the weather near you...</div>
+
+    <script>
+
+        var getWeather = function (selector, degrees, message, icon) {
+            // assign degrees to temperatureType correctly
+            var temperatureType;
+            switch (degrees) {
+                case "C":
+                    // map celcius to metric input of API
+                    temperatureType = "M";
+                    break;
+                case "S":
+                    // map S directly to scientific input of API
+                    temperatureType = degrees;
+                    break;
+                case "F":
+                    // map farhenheit to fahrenheit input of API
+                    temperatureType = "I";
+                    break;
+                default:
+                    // default to Celcius
+                    temperatureType = "M";
+            }
+
+            // Multiple dependent API calls using fetch
+            var app = document.querySelector(selector);
+
+            // Keys
+            var wAPIkey = 'fdecfaf73aa84f00924bcbe57d7c3b6b';
+
+            // Endpoints
+            var locationAPI = 'https://ipapi.co/json';
+            var weatherAPI = 'https://api.weatherbit.io/v2.0/current'
+            var iconAPI = 'http://weatherbit.io/static/img/icons/'
+
+            /**
+             * Sanitize and encode all HTML in a user-submitted string
+             * @param  {String} str  The user-submitted string
+             * @return {String} str  The sanitized string
+             */
+            var sanitizeHTML = function (str) {
+                var temp = document.createElement('div');
+                temp.textContent = str;
+                return temp.innerHTML;
+            };
+
+            // Get data from both APIs
+            var weatherData = fetch(locationAPI).then(function (response) {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    return Promise.reject(response);
+                }
+            }).then(function (location) {
+                fetch(`${weatherAPI}?lat=${location.latitude}&lon=${location.longitude}&units=${temperatureType}&key=${wAPIkey}`).then(function (response) {
+                    if (response.ok) {
+                        return response.json();
+                    } else {
+                        return Promise.reject(response);
+                    }
+                }).then(function (weather) {
+                    console.log(weather);
+                    var sanitizedTemperature = sanitizeHTML(weather.data[0].temp);
+                    var sanitizedDescription = sanitizeHTML(weather.data[0].weather.description);
+                    app.textContent = `${sanitizedTemperature} °${degrees} ${sanitizedDescription} ${message}`;
+                    if (icon) {
+                        var iconElement = document.createElement("img");
+                        var sanitizedIcon = sanitizeHTML(weather.data[0].weather.icon);
+                        iconElement.src = `${iconAPI}${sanitizedIcon}.png`;
+                        app.insertAdjacentElement("beforeend", iconElement);
+                    }
+                }).catch(function (err) {
+                    console.warn(err);
+                })
+            }).catch(function (err) {
+                console.warn(err);
+            })
+        }
+
+        getWeather("#app","F","enjoy your day!",false);
+
+    </script>
+</body>
+
+</html>
