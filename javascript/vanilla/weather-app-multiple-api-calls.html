@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Weather App</title>
+
+	<style type="text/css">
+		body {
+			margin: 1em auto;
+			max-width: 30em;
+			width: 88%;
+		}
+	</style>
+</head>
+<body>
+
+	<h1>Weather App</h1>
+
+	<div id="app">Checking the weather near you...</div>
+
+	<script>
+		// Multiple dependent API calls using fetch
+        var app = document.querySelector('#app');
+
+        // Keys
+        var wAPIkey = 'fdecfaf73aa84f00924bcbe57d7c3b6b';
+
+        // Endpoints
+        var locationAPI = 'https://ipapi.co/json';
+        var weatherAPI  = 'https://api.weatherbit.io/v2.0/current'
+        var iconAPI     = 'http://weatherbit.io/static/img/icons/'
+
+        // Get data from both APIs
+        var weatherData = fetch(locationAPI).then(function(response) {
+            if(response.ok) {
+                return response.json();
+            } else {
+                return Promise.reject(response);
+            }
+        }).then(function(location) {
+            fetch(`${weatherAPI}?lat=${location.latitude}&lon=${location.longitude}&units=I&key=${wAPIkey}`).then(function(response) {
+                if(response.ok) {
+                    return response.json();
+                } else {
+                    return Promise.reject(response);
+                }
+            }).then(function(weather) {
+                console.log(weather);
+                app.textContent = `${weather.data[0].temp} °F with ${weather.data[0].weather.description}`;
+                var icon = document.createElement("img");
+                icon.src = `${iconAPI}${weather.data[0].weather.icon}.png`;
+                app.insertAdjacentElement("beforeend", icon);
+            }).catch(function(err) {
+                console.warn(err);
+            })
+        }).catch(function(err) {
+            console.warn(err);
+        })
+	</script>
+</body>
+</html>
