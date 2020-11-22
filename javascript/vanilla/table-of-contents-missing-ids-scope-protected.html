@@ -101,7 +101,8 @@
 	</footer>
 
 	<script>
-		var tocConstructor = function () {
+		// Use Immediately Invoked Function Expression (IIFE) to protect scope
+		(function () {
 			// Store elements as variables
 			var toc = document.querySelector("#table-of-contents");
 			var h2s = Array.prototype.slice.call(document.querySelectorAll("h2"));
@@ -126,10 +127,7 @@
 				// Add the ordered list to the Table of Contents
 				toc.appendChild(linkList);
 			}
-		}
-
-		// Invoke function, building a Table of Contents
-		tocConstructor();
+		})();
 
 		// This should be undefined
 		console.log(toc);
