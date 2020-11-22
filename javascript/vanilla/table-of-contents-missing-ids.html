@@ -110,7 +110,7 @@
 
 				// Check for id presence and fix
 				if(!h2.id) {
-					h2.id = h2.textContent.replace(new RegExp(' ', 'g'), '-').replace(new RegExp("'", 'g'), '');
+					h2.id = h2.textContent.replace(/[^a-z0-9]+/gi, '-');
 				}
 
                 linkNode.innerHTML = `<a href='#${h2.id}'>${h2.textContent}</a>`;
