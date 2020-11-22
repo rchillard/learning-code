@@ -29,6 +29,17 @@
         var weatherAPI  = 'https://api.weatherbit.io/v2.0/current'
         var iconAPI     = 'http://weatherbit.io/static/img/icons/'
 
+		/**
+		 * Sanitize and encode all HTML in a user-submitted string
+		 * @param  {String} str  The user-submitted string
+		 * @return {String} str  The sanitized string
+		 */
+         var sanitizeHTML = function (str) {
+			var temp = document.createElement('div');
+			temp.textContent = str;
+			return temp.innerHTML;
+		};
+
         // Get data from both APIs
         var weatherData = fetch(locationAPI).then(function(response) {
             if(response.ok) {
@@ -45,9 +56,12 @@
                 }
             }).then(function(weather) {
                 console.log(weather);
-                app.textContent = `${weather.data[0].temp} °F with ${weather.data[0].weather.description}`;
+                var sanitizedTemperature = sanitizeHTML(weather.data[0].temp);
+                var sanitizedDescription = sanitizeHTML(weather.data[0].weather.description);
+                app.textContent = `${sanitizedTemperature} °F with ${sanitizedDescription}`;
                 var icon = document.createElement("img");
-                icon.src = `${iconAPI}${weather.data[0].weather.icon}.png`;
+                var sanitizedIcon = sanitizeHTML(weather.data[0].weather.icon);
+                icon.src = `${iconAPI}${sanitizedIcon}.png`;
                 app.insertAdjacentElement("beforeend", icon);
             }).catch(function(err) {
                 console.warn(err);
