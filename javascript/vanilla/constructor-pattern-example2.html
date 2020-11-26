@@ -47,6 +47,7 @@
 
             // Private methods
             var NodesToArray = function (nodes) {
+                if (!nodes || nodes.length < 1 ) return null;
                 return Array.prototype.slice.call(nodes);
             }
 
@@ -76,6 +77,7 @@
 
             Constructor.prototype.addClass = function (className) {
                 return this.elements().forEach(function (ele) {
+                    if (!ele) return;
                     ele.classList.add(className);
                 });
             }
