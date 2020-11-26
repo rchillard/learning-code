@@ -70,16 +70,20 @@
             }
 
             Constructor.prototype.removeClass = function (className) {
-                return this.elements().forEach(function (ele) {
+                this.elements().forEach(function (ele) {
                     ele.classList.remove(className);
                 });
+                // Returning this (the instance) makes a method chainable
+                return this;
             }
 
             Constructor.prototype.addClass = function (className) {
-                return this.elements().forEach(function (ele) {
+                this.elements().forEach(function (ele) {
                     if (!ele) return;
                     ele.classList.add(className);
                 });
+                // Returning this (the instance) makes a method chainable
+                return this;
             }
             // Export instance
             return Constructor;
@@ -92,8 +96,7 @@
         console.log(listItems.first());
         console.log(listItems.last());
         var buttons = new MyQuery('button');
-        buttons.removeClass('btn-blue');
-        buttons.addClass('btn-purple');
+        buttons.removeClass('btn-blue').addClass('btn-purple');
     </script>
 </body>
 
