@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Constructor Pattern Example</title>
+</head>
+
+<body>
+    <h1>Constructor Pattern Example</h1>
+    <p>
+        Open your console and try out:
+    <pre>
+            <code>
+                var Bob = new CharacterMaker('bob');
+                console.log(Bob.getAge('years'));
+                console.log(Bob.getAge('seasons'));
+        
+                var Judy = new CharacterMaker('judy');
+                console.log(Judy.getAge('years'));
+                console.log(Judy.getAge('seasons'));
+                console.log(Judy.getAgeBySeasons());
+            </code>
+        </pre>
+    </p>
+    <p>
+        You should see success in using public method (getAge) but not in using private method (getAgeBySeasons), because it is not accessible to you.  Each instance
+        created by declared a variable and assigning it to a new CharacterMaker should result in a unique character.
+    </p>
+    <script>
+        var CharacterMaker = (function () {
+
+            // private methods
+            var getAgeBySeasons = function (age) {
+                return age * 4;
+            }
+
+            var Constructor = function (name) {
+                // private data
+                this.name = name;
+                this.age = Math.floor(Math.random() * Math.floor(80));
+            }
+
+            // public methods 
+            Constructor.prototype.getAge = function (unit) {
+                if (unit === 'years') {
+                    return this.age;
+                }
+
+                if (unit === 'seasons') {
+                    return getAgeBySeasons(this.age);
+                }
+            }
+
+            // return instance
+            return Constructor;
+        })();
+
+        var Bob = new CharacterMaker('bob');
+        console.log(Bob.getAge('years'));
+        console.log(Bob.getAge('seasons'));
+
+        var Judy = new CharacterMaker('judy');
+        console.log(Judy.getAge('years'));
+        console.log(Judy.getAge('seasons'));
+        console.log(Judy.getAgeBySeasons());
+    </script>
+</body>
+
+</html>
