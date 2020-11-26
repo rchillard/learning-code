@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Revealing Module Pattern Example</title>
+</head>
+
+<body>
+    <h1>Revealing Module Pattern Example</h1>
+    <p>
+        Open your console and try out:
+        <pre>
+            <code>
+                character.getAge('seasons');
+                character.calculateAgeBySeasons();
+            </code>
+        </pre>
+    </p>
+    <p>
+        The first is a public method, which should return a result:
+        <samp>168</samp>
+    </p>
+    <p>
+        The second is a private method, which should be inaccessible to you with the following error message:
+        <pre>
+            <samp>Uncaught TypeError: character.calculateAgeBySeasons is not a function</samp>
+        </pre>
+    </p>
+    <script>
+        var character = (function() {
+            // private data
+            var name = 'Mattias';
+            var age = '42'; 
+            var character = 'Warrior';
+            var actions = {
+                attack: 'Warrior swings their sword!',
+                defend: 'Warrior raises their shield!',
+                heal: 'Warrior applies bandages, healing.',
+            }
+
+            // private methods
+            var calculateAgeBySeasons = function() {
+                return age * 4;
+            }
+            // variable to store public methods
+            var methods = {}
+            
+            // public methods 
+            methods.getName = function() {
+                return `I am ${name}, first of my lineage.`
+            }
+
+            methods.getAge = function(unit) {
+                if(unit === 'years') {
+
+                }
+
+                if(unit === 'seasons') {
+                    return calculateAgeBySeasons();
+                }
+            }
+        
+            methods.act = function(action) {
+                if(action) {
+                    console.log(actions[action]);
+                } else {
+                    console.log(`${character} ${name} stands there and stares dumbly.`)
+                }
+            }
+            // return public methods
+            return methods;
+        })();
+    </script>
+</body>
+
+</html>
