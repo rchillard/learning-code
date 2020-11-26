@@ -52,18 +52,20 @@
 
             // Exportable object
             var Constructor = function (query) {
-                this.query = query;
+                this.elems = document.querySelectorAll(query);
             }
 
             // Public methods
             Constructor.prototype.elements = function () {
-                return NodesToArray(document.querySelectorAll(this.query));
+                return NodesToArray(this.elems);
             }
 
-            Constructor.prototype.firstlast = function () {
-                var first = this.elements()[0];
-                var last = this.elements()[this.elements().length - 1];
-                console.log(last);
+            Constructor.prototype.first = function () {
+                return this.elements()[0];
+            }
+
+            Constructor.prototype.last = function () {
+                return this.elements()[this.elements().length - 1];
             }
 
             Constructor.prototype.removeClass = function (className) {
@@ -81,11 +83,12 @@
             return Constructor;
         })();
 
+        // Test out library
         var listItems = new MyQuery('li');
 
         console.log(listItems.elements());
-        console.log(listItems.firstlast());
-
+        console.log(listItems.first());
+        console.log(listItems.last());
         var buttons = new MyQuery('button');
         buttons.removeClass('btn-blue');
         buttons.addClass('btn-purple');
