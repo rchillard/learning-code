@@ -16,8 +16,15 @@
             margin: 1rem 0;
         }
 
-        img {
+        figure {
             margin: 0 auto;
+        }
+
+        figcaption {
+            font-size: 0.8rem;
+        }
+
+        img {
             width: 90%;
         }
     </style>
@@ -35,7 +42,10 @@
             <input id="todo-submit" type="submit" value="Add">
         </form>
         <p>You have <span id="todo-count">0</span> items on your list.</p>
-        <img alt="hand writing to do items in notepad" src="images/glenn-carstens-peters-RLw-UC03Gwc-unsplash.jpg">
+        <figure>
+            <img alt="hand writing to do items in notepad" src="images/glenn-carstens-peters-RLw-UC03Gwc-unsplash.jpg">
+            <figcaption><span>Photo by <a href="https://unsplash.com/@glenncarstenspeters?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Glenn Carstens-Peters</a> on <a href="https://unsplash.com/s/photos/to-do?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span></figcaption>
+        </figure>
     </main>
     <script>
         var outputList = document.getElementById("todo-list");
