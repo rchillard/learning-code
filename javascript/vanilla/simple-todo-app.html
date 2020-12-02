@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        main {
+            margin: 0 auto;
+            max-width: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>To Do List</h1>
+        <p>Let's mark things off your to-do list!</p>
+        <ul id="todo-list">
+        </ul>
+        <form onsubmit="return addTodo()">
+            <input id="todo-text" type="text">
+            <input id="todo-submit" type="submit" value="Add">
+        </form>
+    </main>
+    <script>
+        var outputList = document.getElementById("todo-list");
+        var inputText = document.getElementById("todo-text");
+
+        function addTodo() {
+            var newListItem = document.createElement("li");
+            var newRemoveButton = document.createElement("button");
+            newListItem.innerHTML = inputText.value + " <button>X</button>";
+            outputList.insertAdjacentElement("beforeend", newListItem);
+            return false;
+        }
+
+        var clickHandler = function (event) {
+            var listItem = event.target.closest('li');
+            if (!listItem) return;
+            listItem.remove();
+        }
+
+        document.addEventListener("click", clickHandler, false);
+    </script>
+</body>
+
+</html>
