@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        main {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            margin: 0 auto;
+            max-width: 300px;
+        }
+
+        form {
+            margin: 1rem 0;
+        }
+
+        figure {
+            margin: 0 auto;
+        }
+
+        figcaption {
+            font-size: 0.8rem;
+        }
+
+        img {
+            width: 90%;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>To Do List</h1>
+        <p>Let's mark things off your to-do list!</p>
+        <ul id="todo-list">
+        </ul>
+        <form onsubmit="return addTodo()">
+            <label for="todo-text">What do you need to do?</label>
+            <input id="todo-text" type="text">
+            <input id="todo-submit" type="submit" value="Add">
+        </form>
+        <p>You have <span id="todo-count">0</span> items on your list.</p>
+        <figure>
+            <img alt="hand writing to do items in notepad" src="images/glenn-carstens-peters-RLw-UC03Gwc-unsplash.jpg">
+            <figcaption><span>Photo by <a href="https://unsplash.com/@glenncarstenspeters?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Glenn Carstens-Peters</a> on <a href="https://unsplash.com/s/photos/to-do?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span></figcaption>
+        </figure>
+    </main>
+    <script>
+        var outputList = document.getElementById("todo-list");
+        var outputCount = document.getElementById("todo-count");
+        var inputText = document.getElementById("todo-text");
+        
+        function addTodo() {
+            if (inputText.value.length > 0) {
+                var newListItem = document.createElement("li");
+                newListItem.innerHTML = inputText.value + " <button>X</button>";
+                outputList.insertAdjacentElement("beforeend", newListItem);
+                inputText.value = "";
+                updateCount();
+            }
+            return false;
+        }
+
+        function updateCount() {
+            outputCount.textContent = document.querySelectorAll("#todo-list > li").length;
+        }
+
+        var clickHandler = function (event) {
+            var listItem = event.target.closest('li');
+            if (!listItem) return;
+            listItem.remove();
+            updateCount();
+        }
+
+        document.addEventListener("click", clickHandler, false);
+    </script>
+</body>
+
+</html>
