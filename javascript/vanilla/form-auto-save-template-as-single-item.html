@@ -56,19 +56,22 @@
     <script>
         // Handle data and save it in localStorage as user types
         var inputElements = document.querySelectorAll('input, textarea');
-        var formFieldValues = JSON.parse(localStorage.getItem("form-auto-save"));
+        var savedData = JSON.parse(localStorage.getItem("form-auto-save"));
 
         inputElements.forEach(function (element) {
             // Load data after user
-            element.value = formFieldValues[element.id];
+            if (savedData) {
+                element.value = savedData[element.id];
+            }
+            
             element.addEventListener('keydown', saveData, false);
         })
 
         function saveData(event) {
             inputElements.forEach(function (element) {
-                formFieldValues[element.id] = element.value;
+                savedData[element.id] = element.value;
             })
-            localStorage.setItem("form-auto-save", JSON.stringify(formFieldValues));
+            localStorage.setItem("form-auto-save", JSON.stringify(savedData));
         }
 
         // Clear data on submission
