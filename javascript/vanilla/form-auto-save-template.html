@@ -53,16 +53,25 @@
 
 	<script>
         // Handle data and save it in localStorage as user types
-        var inputElements = document.querySelectorAll("input, textarea");
+        var inputElements = document.querySelectorAll('input, textarea');
 
         inputElements.forEach(function(element) {
             // Load data after user
             element.value = localStorage.getItem(element.id);
-            element.addEventListener("keydown", saveData, false);
+            element.addEventListener('keydown', saveData, false);
         })
 
         function saveData(event) {
             localStorage.setItem(event.srcElement.id, event.srcElement.value);
+        }
+
+        // Clear data on submission
+        document.addEventListener('submit', submitHandler, false);
+
+        function submitHandler(event) {
+            inputElements.forEach(function(element) {
+                localStorage.removeItem(element.id);
+            })
         }
 	</script>
 </body>
