@@ -52,7 +52,18 @@
 	</form>
 
 	<script>
-		// Your code goes here...
+        // Handle data and save it in localStorage as user types
+        var inputElements = document.querySelectorAll("input, textarea");
+
+        inputElements.forEach(function(element) {
+            // Load data after user
+            element.value = localStorage.getItem(element.id);
+            element.addEventListener("keydown", saveData, false);
+        })
+
+        function saveData(event) {
+            localStorage.setItem(event.srcElement.id, event.srcElement.value);
+        }
 	</script>
 </body>
 </html>
