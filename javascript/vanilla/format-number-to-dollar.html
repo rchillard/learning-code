@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0 auto;
+            max-width: 65ch;
+        }
+
+        textarea {
+            width: 90%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Format Numbers to Dollars</h1>
+    <input type="number">
+    <br />
+    <p>Your formated amount will appear below:</p>
+    <p id="output"></p>
+    <br />
+    <p>The JavaScript that accomplishes this:</p>
+    <textarea rows="7">
+function formatToDollar(number) {
+    return new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+    }).format(number)
+}
+    </textarea>
+    <p>Full API details here: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat#Parameters">Intl.NumberFormat</a></p>
+    <script>
+        function formatToDollar(number) {
+            return new Intl.NumberFormat('en-US', {
+                style: 'currency',
+                currency: 'USD',
+            }).format(number)
+        }
+
+        function displayDollars(event) {
+            output.textContent = formatToDollar(input.value);
+        }
+
+        var input = document.querySelector('input');
+        var output = document.getElementById('output');
+        input.oninput = displayDollars;
+    </script>
+</body>
+
+</html>
