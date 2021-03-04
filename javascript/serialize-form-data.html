@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <form id="comment">
         <label for="authorname">Your name</label>
         <input type="text" name="authorname" id="authorname" value="Bob">
-    
+
         <label for="authorcomment">Your comment</label>
         <textarea id="authorcomment" name="authorcomment">Your comment here</textarea>
 
@@ -22,27 +24,27 @@
         let formData = new FormData(form)
 
         // Standard looping through iterable
-        for(let input of formData) {
+        for (let input of formData) {
             console.log(input)
         }
 
         var today = new Date();
         // Create a brand new key "date" with value of client current date
-        formData.set('date',today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate())
+        formData.set('date', today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate())
         // Update the existing authorId with a random number
-        formData.set('authorId', Math.floor(Math.random(3)*1000))
+        formData.set('authorId', Math.floor(Math.random(3) * 1000))
 
         // Add a duplicative entry using the same key with .append
-        formData.append('authorId', Math.floor(Math.random(3)*1000))
+        formData.append('authorId', Math.floor(Math.random(3) * 1000))
 
         // Using destructuring
-        for(let [key, value] of formData) {
+        for (let [key, value] of formData) {
             console.log(key, value);
         }
 
         // Delete both entries by providing a single key
         formData.delete('authorId')
-        for(let input of formData) {
+        for (let input of formData) {
             console.log(input)
         }
 
@@ -53,23 +55,45 @@
         // Serialize into an object
         let obj = {}
         for (let [key, value] of formData) {
-            obj[key] = value;
+            obj[key] = value
         }
 
         console.log(obj)
 
         // Helper Function for Serializing
         // Chris Ferdinandi Newsletter
-        function serialize (data) {
-            let obj = {};
+        function serialize(data) {
+            let obj = {}
             for (let [key, value] of data) {
-                obj[key] = value;
+                obj[key] = value
             }
-            return obj;
+            return obj
         }
 
-        let formObj = serialize(formData);
-        console.log(formObj);
+        let formObj = serialize(formData)
+        console.log(formObj)
+
+        // Submit to an API as JSON
+        console.log("==============================")
+        console.log("API SUBMISSION RESPONSE BELOW:")
+
+        fetch('https://jsonplaceholder.typicode.com/posts', {
+            method: 'POST',
+            body: JSON.stringify(serialize(formData)), // The data
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8' // The type of data you're sending
+            }
+        }).then(function (response) {
+            if (response.ok) {
+                return response.json()
+            }
+            throw response;
+        }).then(function (data) {
+            console.log(data)
+        }).catch(function (error) {
+            console.warn(error)
+        })
     </script>
 </body>
+
 </html>
