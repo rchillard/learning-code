@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        code, pre {
+            font-family: monospace, monospace;
+            font-size: 1em;
+        }
+
+        main {
+            margin: 0 auto;
+            width: 50vw;
+        }
+
+        .callout {
+            color: darkred;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>Default Parameter Values</h1>
+        <p>Is defined as name = 'mysterious figure'</p>
+        <p><span></span></p>
+        <h2>What is your name?</h2>
+        <form>
+            <input type="text">
+            <input type="submit">
+        </form>
+        <h2>Code</h2>
+        <pre>
+            <code>
+function greetings(<span class="callout">name = 'mysterious figure'</span>) {
+    var greeting = `Hail and well met ${name}.`
+    console.log(greeting);
+    return greeting;
+}
+            </code>
+        </pre>
+    </main>
+    <script>
+        var spanEle = document.querySelector('span');
+        var formEle = document.querySelector('form');
+        var inputEle = document.querySelector('input[type="text"]');
+
+        spanEle.textContent = greetings();
+
+        function greetings(name = 'mysterious figure') {
+            var greeting = `Hail and well met ${name}.`
+            console.log(greeting);
+            return greeting;
+        }
+
+        function handleSubmit(event) {
+            spanEle.textContent = greetings(inputEle.value);
+            event.preventDefault();
+        }
+
+        formEle.addEventListener('submit', handleSubmit, true);
+    </script>
+</body>
+
+</html>
