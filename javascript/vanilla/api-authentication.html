@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Three ways to authenticate with an API:
+        // 1. Query Parameter
+        // 2. Basic Authentication
+        // 3. Authentication Token
+
+        // QUERY PARAMETER
+        // Using an API key you already generated
+        var apiKey = 'abcd';
+
+        fetch(`https://your-favorite-api-here.com/goodstuff.json?api-key=${apiKey}`).then(function (response) {
+            if (response.ok) {
+                return response.json();
+            }
+            throw response;
+        }).then(function (data) {
+            render(data);
+        }).catch(function (error) {
+            console.log(error);
+        })
+
+        // BASIC AUTHENTICATION
+        var username = 'BillyBoy';
+        var password = '12345';
+
+        fetch('https://your-favorite-api-here.com/authenticate', {
+            headers: {
+                'Authorization': `Basic ${btoa(username)}:${btoa(password)}`
+                // https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/btoa
+            }
+        }).then(function (response) {
+            if (response.ok) {
+                return response.json();
+            }
+            throw response;
+        }).then(function (data) {
+            console.log(data);
+            // This is usually an authorization token that you would use in future requests to the real API
+        }).catch(function (error) {
+            console.warn(error);
+        })
+
+        // AUTHENTICATION TOKEN
+        var token = 'blahblahblah';
+
+        fetch('https://your-favorite-api-here.com/token', {
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        }).then(function (response) {
+            if (response.ok) {
+                return response.json();
+            }
+            throw response;
+        }).then(function (data) {
+            console.log(data);
+        }).catch(function (error) {
+            console.warn(error);
+        })
+    </script>
+</body>
+</html>
