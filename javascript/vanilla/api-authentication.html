@@ -65,6 +65,15 @@
         }).catch(function (error) {
             console.warn(error);
         })
+
+        // STORING TOKEN
+        // Using a cookie
+        document.cookie = `token=blahblahblah; max-age=${60 * 60 * 24 * 14}; secure;`;
+        // Using Local Storage
+        localStorage.setItem('token', 'blahblahblah');
+        // Using Session Storage
+        sessionStorage.setItem('token', 'blahblahblah');
+        
     </script>
 </body>
 </html>
