@@ -69,6 +69,7 @@
         // STORING TOKEN
         // Using a cookie
         document.cookie = `token=blahblahblah; max-age=${60 * 60 * 24 * 14}; secure;`;
+        // https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie
         // Using Local Storage
         localStorage.setItem('token', 'blahblahblah');
         // Using Session Storage
