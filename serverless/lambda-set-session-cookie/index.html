@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="mvp.css" rel="stylesheet">
+    <title>Login Page</title>
+</head>
+
+<body>
+    <main>
+        <h1>Set Session Cookie Lambda (Client)</h1>
+        <p>This is the client (host on S3), which submits a login form to a Lambda (FaaS). The Lambda should respond by
+            setting a cookie and re-directing the user to a logged in page. If the login is incorrect, it should send
+            them back to login page with a flash message showing the error.</p>
+        <hr>
+        <section>
+            <form>
+                <header>
+                    <h2>Login</h2>
+                </header>
+                <label for="username">Username <input id="username" type="text" required></label>
+                <br>
+                <label for="password">Password <input id="password" type="password" required></label>
+                <br>
+                <button type="submit">Login</button>
+            </form>
+        </section>
+        <article>
+            <p>Status Message</p>
+            <aside></aside>
+        </article>
+    </main>
+
+
+</body>
+
+</html>
