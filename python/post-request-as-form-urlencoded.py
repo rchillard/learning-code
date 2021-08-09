@@ -1,6 +1,6 @@
 from urllib import request, parse
 
-url = 'https://www.yoururlhere.com/'
+url = 'https://www.google.com/'
 
 data = {
     "search": "python urllib"
@@ -12,7 +12,7 @@ headers = {
     'Content-Type': 'application/x-www-form-urlencoded',
 }
 
-req = request.Request(url, headers=headers, method="POST")
+req = request.Request(url, data=data, headers=headers, method="POST")
 print(req.get_method() + " " + req.get_full_url() + "\n" + str(req.header_items()) + "\n" + str(data))
 
 try:
