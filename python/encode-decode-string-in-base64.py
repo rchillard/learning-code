@@ -1,3 +1,4 @@
+# https://stackabuse.com/encoding-and-decoding-base64-strings-in-python
 # Base64 encoding is a type of conversion of bytes into ASCII characters. 
 # In mathematics, the base of a number system refers to how many different characters represent numbers. 
 # The name of this encoding comes directly from the mathematical definition of bases - we have 64 characters that represent numbers.
