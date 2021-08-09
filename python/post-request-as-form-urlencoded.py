@@ -1,6 +1,4 @@
 from urllib import request, parse
-import json
-import base64
 
 url = 'https://www.yoururlhere.com/'
 
