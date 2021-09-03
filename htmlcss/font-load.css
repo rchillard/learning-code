@@ -1,0 +1,17 @@
+/* The font-display property tells the browser what to do with a particular font file and how to display it. It has five values:
+
+    auto - The browser uses the default behavior.
+    block - Short block phase, infinite swap phase.
+    swap - Extremely small block phase, infinite swap phase.
+    fallback - Extremely small block phase, short swap phase.
+    optional - Extremely small block phase, no swap phase.
+ */
+
+@font-face {
+	font-display: swap;
+	font-family: 'PT Sans';
+	font-style: normal;
+	font-weight: 400;
+	src: local('PT Sans'), local('PTSerif-Regular'), url('path/to/my/fonts/pt-sans-regular.woff2') format('woff2'),
+		url('path/to/my/fonts/pt-sans-regular.woff') format('woff');
+}
