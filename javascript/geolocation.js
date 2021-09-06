@@ -24,4 +24,7 @@ options = {
 
 // Request access to watch the user's location
 // https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/watchPosition
-navigator.geolocation.watchPosition(success, error, options);
+let locationID = navigator.geolocation.watchPosition(success, error, options);
+
+// To stop watching, apply the clearWatch() function to the locationID variable
+navigator.geolocation.clearWatch(locationID);
