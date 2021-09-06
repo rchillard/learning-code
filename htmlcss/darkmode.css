@@ -1,0 +1,17 @@
+/**
+ * Default styles
+ */
+body {
+    background-color: #ffffff;
+	color: #272727;
+}
+
+/**
+ * If dark mode is enabled, do this instead
+ */
+@media (prefers-color-scheme: dark) {
+	body {
+		background-color: #272727;
+		color: #ffffff;
+	}
+}
