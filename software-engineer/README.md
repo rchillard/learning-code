@@ -5,6 +5,7 @@ This is sourced from a Medium article called [The Software Engineering Learning 
 Here’s a list of the possible topics we include in Software Engineering Learning Plans, spanning the realms of algorithms, coding, data, databases, devops, and web architecture. We build and run highly scaled web applications at MoveOn, so this set of topics encompasses most of our work. Working collaboratively with the engineer, we pick out a list of ~10 topics for each plan, and 2–3 per quarter to focus on.
 
 ## Algorithms:
+Recommended book is [Introduction to Algorithms, 3rd Edition (The MIT Press)](https://www.amazon.com/Introduction-Algorithms-3rd-MIT-Press/dp/0262033844) by Thomas H. Cormen
 
 - [ ] Big-O notation: what is it? when is it useful to know about? what are some recent examples where we had to think in terms of big-O to solve an optimization problem?
 - [ ] Big-O application: think in terms of Big-O to determine how long a chunk of code will take to execute
