@@ -1,0 +1,37 @@
+/* Target elements with the data-title attribute */
+[data-title] {
+    background-color: red;
+}
+
+/* Target elements with a data-title value of lady */
+[data-title="lady"] {
+    background-color: blue;
+}
+
+/* Given this HTML, consider how you would select using CSS attributes  */
+/* <div data-titles="god-empress lady Governess regent">My Titles</div> */
+
+[data-titles~="lady"] { /* The ~ will match a value separated by white space */
+    background-color: yellow;
+}
+
+[data-titles|="god"] { /* The | will find exact matches or instaces followed by a dash ( - ) */
+    background-color: green;
+}
+
+[data-titles^="god"] { /* The ^ matches values that start with the string provided */
+    background-color: pink;
+}
+
+
+[data-lunch$="regent"] { /* The $ matches values that end with the string provided */
+    background-color: orange;
+}
+
+[data-lunch*="lad"] { /* The * matches any instance without worrying if it's a stand alone word */
+    background-color: purple;
+}
+
+[data-lunch~="governess" i] { /* The i tells your selector to ignore case */
+    background-color: brown;
+}

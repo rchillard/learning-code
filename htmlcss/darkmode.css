@@ -1,0 +1,15 @@
+/* Default styles */
+body {
+    background-color: #ffffff;
+	color: #272727;
+}
+
+/* If dark mode is enabled, invert colors */
+@media (prefers-color-scheme: dark) {
+	body {
+		background-color: #272727;
+		color: #ffffff;
+	}
+}
+
+/* Color contrast checker: https://webaim.org/resources/contrastchecker/ */

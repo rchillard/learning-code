@@ -1,3 +1,2 @@
-# Smarter Way to Learn HTML & CSS
-When I picked up learning code again, I realized that my knowledge was so badly dated that I needed to go back and re-learn some fundamentals, including the basic building blocks of the web.  This folder contains [exercises from a book](http://www.asmarterwaytolearn.com/htmlcss/index-of-exercises.html) called [A Smarter Way to Learn HTML & CSS](https://www.amazon.com/Smarter-Way-Learn-HTML-CSS-ebook/dp/B00ULX5FT2/ref=pd_sim_351_3).
-They cover around 90 different exercises, covering the basics to tables, forms, layouts, video, audio, you name it, all using basic HTML and CSS.
+# HTML & CSS
+
