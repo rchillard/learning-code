@@ -2,15 +2,18 @@ This is sourced from a Medium article called [The Software Engineering Learning 
 
 # The Software Engineering Learning Plan Template
 
-Here’s a list of the possible topics we include in Software Engineering Learning Plans, spanning the realms of algorithms, coding, data, databases, devops, and web architecture. We build and run highly scaled web applications at MoveOn, so this set of topics encompasses most of our work. Working collaboratively with the engineer, we pick out a list of ~10 topics for each plan, and 2–3 per quarter to focus on.
+Here’s a list of the possible topics we include in Software Engineering Learning Plans, spanning the realms of algorithms, coding, data, databases, devops, and web architecture.  This set of topics encompasses work to build and run highly scaled web applications.  Working collaboratively with the engineer, we pick out a list of ~10 topics for each plan, and 2–3 per quarter to focus on.
 
 ## Algorithms:
-Recommended book is [Introduction to Algorithms, 3rd Edition (The MIT Press)](https://www.amazon.com/Introduction-Algorithms-3rd-MIT-Press/dp/0262033844) by Thomas H. Cormen
+Recommended book [Introduction to Algorithms, 3rd Edition (The MIT Press)](https://www.amazon.com/Introduction-Algorithms-3rd-MIT-Press/dp/0262033844) by Thomas H. Cormen
 
-- [ ] Big-O notation: what is it? when is it useful to know about? what are some recent examples where we had to think in terms of big-O to solve an optimization problem?
-- [ ] Big-O application: think in terms of Big-O to determine how long a chunk of code will take to execute
-- [ ] Big-O application: think in terms of Big-O to determine how much system memory a chunk of code will use
-- [ ] Recursion, differences between iterative and recusive solutions
+- [ ] Big-O Notation: 
+  - [ ] Basics: What is it? When is it useful to know about? 
+  - [ ] What are some recent examples where we had to think in terms of Big-O to solve an optimization problem?
+- [ ] Big-O Application: 
+  - [ ] Use Big-O to determine how long a chunk of code will take to execute
+  - [ ] Use Big-O to determine how much system memory a chunk of code will use
+- [ ] Recursion, differences between iterative and recursive solutions
 - [ ] Hash functions
 - [ ] Memoization and in-memory caching
 
@@ -19,18 +22,32 @@ Recommended book is [Introduction to Algorithms, 3rd Edition (The MIT Press)](ht
 - [ ] Logical Operators
 - [ ] Regular Expressions
 - [ ] How to create a simple standalone script: running it, parsing user input, credential management
-- [ ] Design patterns: what are they, why are they useful? Commonly used design patterns in our codebases.
-- [ ] Design patterns: the Observer pattern, and examples in frontend frameworks for async updating
-- [ ] Design patterns: use of the MVC, MVW, and MTV patterns in full-stack web frameworks for keeping code organized
-- [ ] Commonly used data structures: hash tables / dictionaries, lists / arrays. when do we use each? what are some examples from our current systems? What are the Big-O differences between them for data storage and retrieval?
-- [ ] How code uses system memory, and the scaling limits of system memory
+- [ ] Design Patterns: 
+  - [ ] Basics: What are they, why are they useful? Commonly used design patterns in our codebases.
+- [ ] Design Pattern Application: 
+  - [ ] Observer pattern and examples in frontend frameworks for async updating
+  - [ ] Use of the MVC, MVW, and MTV patterns in full-stack web frameworks for keeping code organized
+- [ ] Data Structures: 
+  - [ ] When do we use each?  What are some examples from our current systems? 
+  - [ ] Hash Tables
+  - [ ] Dictionaries
+  - [ ] Lists / Arrays
+  - [ ] What are the Big-O differences between them for data storage and retrieval?
+- [ ] How code uses System Memory, and the scaling limits of System Memory
 
 ## Data:
 
-- [ ] Deep dive into our actively used data models
-- [ ] Differences between relational and document-oriented data models, and when to use each
-- [ ] Data Modeling for new projects: how does this work, why is it important to do before starting a new project, and why do we start with the data model first when planning out new projects?
-- [ ] Query optimization: what do you do when someone complains that their query is running slowly? What is explain-plan and when is it useful?
+- [ ] Data Models:
+  - [ ] Differences between relational and document-oriented data models, and when to use each?
+  - [ ] Deep dive into our actively used Data Models
+- [ ] Data Model Application:
+- [ ] Data Modeling for New Projects: 
+  - [ ] How does this work?
+  - [ ] Why is it important to do before starting a new project?
+  - [ ] Why do we start with the data model first when planning out new projects?
+- [ ] Query Optimization: 
+  - [ ] What do you do when someone complains that their query is running slowly? 
+  - [ ] What is explain-plan and when is it useful?
 - [ ] What are some big-O notation strategies for thinking about query analysis?
 
 ## Databases :
