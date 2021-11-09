@@ -1,12 +1,13 @@
 class App extends React.Component {
   render() {
-    return (
-      <div>
-        <Hello />
-        <NumPicker />
-      </div>
+    return (<div>
+      <Hello />
+      <Hello />
+      <Hello />
+      <NumPicker />
+    </div>
     )
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'))

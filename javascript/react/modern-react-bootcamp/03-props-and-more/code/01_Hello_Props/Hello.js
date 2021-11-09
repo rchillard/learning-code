@@ -1,5 +1,6 @@
 class Hello extends React.Component {
   render() {
-    return <p>Hi {this.props.to} from {this.props.from}</p>;
+    const {to, from} = this.props;
+    return <p>Well met, {to}.  From your friend, {from}.</p>
   }
 }

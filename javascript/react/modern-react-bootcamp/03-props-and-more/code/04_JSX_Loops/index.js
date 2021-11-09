@@ -1,15 +1,21 @@
+const arrayOfFruit = ["🍒", "🍊", "🍇"];
+
 class App extends React.Component {
   render() {
     return (
       <div>
+        <h1>Fruit Stand</h1>
         <Friend
-          name="Elton"
-          hobbies={['Piano', 'Singing', 'Dancing']}
+          name="Bob"
+          hobbies={["Singing", "Dancing", "Jazz Flute"]}
+          fruit="🍒"
         />
         <Friend
-          name="Frida"
-          hobbies={['Drawing', 'Painting']}
+          name="Sara"
+          hobbies={["Drumming", "Painting", "Flying"]}
+          fruit="🍊"
         />
+        <Friend />
       </div>
     )
   }
