@@ -53,26 +53,71 @@ Recommended book [Introduction to Algorithms, 3rd Edition (The MIT Press)](https
 ## Databases :
 
 - [ ] MySQL vs Postgres: what’s the difference between these SQL dialects, and which databases use which in our system?
-- [ ] The different databases we use in AWS: RDS MySQL, RDS Postgres, redis, redshift: what are the differences between them and when do we use each?
-- [ ] What is the primary / secondary architectural pattern in databases in the RDS ecosystem (mysql, postgres), what is it useful for, how does this help us scale, and with which systems do we use this pattern?
-- [ ] How do we think about debugging databases? What system properties, metrics, alarms do we look at and what do they tell us? (like db cpu, or number of connections)
+- [ ] The different database types available in AWS.  What are the differences between them and when do we use each?
+  - [ ] RDS MySQL
+  - [ ] RDS Postgres
+  - [ ] ElastiCache Redis
+  - [ ] Redshift
+- [ ] What is the primary / secondary architectural pattern in databases in the RDS ecosystem (MySQL, Postgres)?
+  - [ ] what is it useful for?
+  - [ ] How does this help us scale?
+  - [ ] With which systems do we use this pattern?
+- [ ] How do we think about debugging databases? 
+  - [ ] What system properties?
+  - [ ] What metrics matter and what do they tell us?  (CPU or number of connections)
+  - [ ] What alarms should we setup and monitor? 
 
 ## DevOps:
 
-- [ ] How to figure out what’s going on with this linux box? sshing in, finding and editing the crontab, finding and tailing logs, listing running processes, checking system properties like memory and disk space used
-- [ ] Command line fu: bash, aliases, ssh key mgmt, keyboard shortcuts
-- [ ] Deployment systems: how does code get from our desktops or github to production? Examples of different techniques used by different systems
+- [ ] How to figure out what’s going on with this Linux box? 
+  - [ ] Using ssh to access a server
+  - [ ] Finding and editing the crontab
+  - [ ] Finding and tailing logs
+  - [ ] Listing running processes
+  - [ ] Checking system properties like memory and disk space used
+- [ ] Command line fu:
+  - [ ] vim
+  - [ ] bash
+  - [ ] aliases
+  - [ ] ssh key management
+  - [ ] keyboard shortcuts
+- [ ] Deployment systems:
+  - [ ] Wow does code get from our desktops or github to production?
+  - [ ] Examples of different techniques used by different systems
 
 ## Web Architecture:
 
-- [ ] How do we think about debugging frontend code? What debuggers are used, and what information can they tell you about the running system?
-- [ ] How do we think about debugging backend code? What debuggers are used, and what information can they tell you about the running system?
-- [ ] Where is the line between frontend and backend in our systems? How do you know when code is executing on the frontend vs the backend?
-- [ ] Synchronous vs asynchronous processing: what does it mean when we have code run synchronously in the context of a web server process vs async in some other worker process? When do we use task schedulers?
-- [ ] Basics of system scaling: understanding the system resource usage and in particular the rate at which data is read and written for each category of incoming request
-- [ ] Common scaling issues and how to address them: webservers running out of memory or CPU, databases running out of available connections, systems not keeping up with incoming request throughput
-- [ ] How do requests get from your browser into our systems? What are all the steps, and systems a request passes through and in what order? Use debuggers to trace the path of a request from the browser all the way through one of our systems
-- [ ] What are the components of the internet that a request passes through before it actually gets to the systems we manage? What is DNS? What is edge caching? Why are these systems important and how are they used?
-- [ ] Load balancers: why are these important? How are they used and how do they help us scale?
-- [ ] Queues: using them to smooth out write performance, how to integrate with other system components, when is it helpful to consider adding a queue into a server architecture?
-- [ ] Caching: when do we use caching? What does it help with? What are some pitfalls to try and avoid?
+- [ ] How do we think about debugging frontend code? 
+- [ ] What debuggers are used, and what information can they tell you about the running system?
+- [ ] How do we think about debugging backend code? 
+- [ ] What debuggers are used, and what information can they tell you about the running system?
+- [ ] Where is the line between frontend and backend in our systems? 
+- [ ] How do you know when code is executing on the frontend vs the backend?
+- [ ] Synchronous vs asynchronous processing:
+  - [ ] What does it mean when we have code run synchronously in the context of a web server process vs async in some other worker process?
+  - [ ] When do we use task schedulers?
+- [ ] Basics of system scaling:
+  - [ ] Understanding the system resource usage
+  - [ ] Rate at which data is read and written for each category of incoming request
+- [ ] Common scaling issues and how to address them:
+  - [ ] Webservers running out of memory or CPU
+  - [ ] Databases running out of available connections
+  - [ ] Systems not keeping up with incoming request throughput
+- [ ] How do requests get from your browser into our systems?
+- [ ] What are all the steps and systems a request passes through and in what order?
+- [ ] Use debuggers to trace the path of a request from the browser all the way through one of our systems
+- [ ] What are the components of the internet that a request passes through before it actually gets to the systems we manage?
+  - [ ] What is DNS?
+  - [ ] What is edge caching?
+  - [ ] Why are these systems important and how are they used?
+- [ ] Load balancers:
+  - [ ] Why are these important?
+  - [ ] How are they used and how do they help us scale?
+- [ ] Queues:
+  - [ ] Uing them to smooth out write performance
+  - [ ] How to integrate with other system components
+  - [ ] When is it helpful to consider adding a queue into a server architecture?
+- [ ] Caching:
+  - [ ] When do we use caching?
+  - [ ] What does it help with?
+  - [ ] What are some pitfalls to try and avoid?
