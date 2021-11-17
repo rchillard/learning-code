@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Percentages vs. Fixed Widths</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .parent {
+            background-color: darkslateblue;
+            margin: 0 auto;
+            padding: 50px;
+
+            /* width: 900px; */
+            /* This is a bad rule, because it takes the natural responsiveness away */
+            /* The default width for a block level element is 100% */
+            /* The percentage is adjusted from the parent element in the tree */
+            width: 80% /* This is 80% of the <body> element, a good rule */
+            /* Our lives become much easier by working in % for widths */
+        }
+
+        .child {
+            background-color: lightblue;
+            height: 250px;
+            width: 50%; /* This is 50% of the <div class=".parent"> element total width */
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="child">
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat quos, eveniet aliquid praesentium dolorum dolore molestiae, exercitationem dolorem quis tenetur pariatur. Non repudiandae maxime autem dicta! Dignissimos, neque repellat quod iure sequi vero accusantium eveniet accusamus quaerat officia et, mollitia dolorem maiores dolore totam explicabo id distinctio amet beatae ratione nobis? Quisquam hic quo, facilis, voluptas minus modi repellat nam possimus explicabo sit eius provident excepturi expedita, laboriosam amet. Ab ipsam, animi nobis ad illum vero totam adipisci, excepturi quidem amet eligendi? Asperiores deserunt iste atque! Expedita quisquam ipsum vero perferendis facere excepturi nobis consequuntur distinctio, dicta odit deleniti aperiam suscipit eius voluptates a, est ipsam perspiciatis. Obcaecati autem fugit voluptatum perferendis, debitis expedita dicta sint nisi quo aliquid, ab, consectetur nihil! Aspernatur sint est numquam qui vero, minima exercitationem quidem facere quisquam, necessitatibus dolorum non maxime laboriosam eligendi quia labore, architecto similique neque quae repellendus. Quis laudantium accusamus nulla doloremque recusandae exercitationem asperiores, enim nisi corporis dolorem amet natus voluptate eligendi voluptatum rerum quidem sit quia aliquid aspernatur tempora laboriosam facilis dicta. Dolor vel natus dolorem est sed ad, rem unde reprehenderit rerum deleniti nobis aliquam commodi nemo autem voluptas error aperiam deserunt quam ipsum. Distinctio reiciendis est ex?</p>
+        </div>
+    </div>
+</body>
+</html>

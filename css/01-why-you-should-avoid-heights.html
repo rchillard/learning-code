@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why You Should Avoid Heights</title>
+    <style>
+        * { 
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: sans-serif;
+        }
+
+        .container {
+            background: darkslateblue;
+            color: white;
+
+            width: 80%;
+            margin: 0 auto;
+
+            padding: 5em; /* 16px default font size * 5 em = 80px */
+            /* This is a bad rule, because it makes white text overflow the container into the body's white background */
+            /* height: 300px; */
+            /* If you can keep from setting height, then you should */
+            /* Without the height setting, it's naturally responsive again */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Lorem ipsum dolor sit amet.</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima rem provident et voluptatum nemo alias dolor voluptas obcaecati impedit ullam odio facere eligendi sint autem labore, pariatur aliquam eius reprehenderit quisquam! Asperiores ratione veniam, quos adipisci quaerat facilis reprehenderit veritatis consequatur sequi quibusdam error repudiandae perferendis quis nostrum sapiente ea!</p>
+    </div>
+</body>
+</html>
