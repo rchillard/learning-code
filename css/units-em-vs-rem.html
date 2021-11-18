@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EM vs. REM</title>
+    <style>
+        html {
+            font-size: 16px;
+        }
+
+        @media (min-width: 700px) {
+            html {
+                font-size: 25px;
+            }
+        }
+
+        body {
+            background: linear-gradient(to left, #e66465, #9198e5);
+            font-family: 'Oswald', sans-serif;
+            font-size: 1em;
+            font-weight: 300;
+            line-height: 1.6;
+            margin: 3em auto;
+            text-align: center;
+        }
+
+        .subhead {
+            font-size: 1.6rem;
+            margin: .5em 0;
+        }
+
+
+        .grid {
+            display: flex;
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .col {
+            flex: 1;
+            margin: 0 0.5em;
+            padding: 0 0.5em;
+        }
+
+        /* EMs */
+
+        .em h1 {
+            font-size: 2.5em;
+        }
+
+        .em p {
+            font-size: 1em;
+        }
+
+        /* REMs */
+
+        .rem h1 {
+            font-size: 2.5rem;
+        }
+
+        .rem p {
+            font-size: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Units in CSS</h1>
+    <p class="subhead">em | rem</p>
+    <div class="grid">
+        <div class="col em">
+            <h1>em</h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit nobis cum officiis autem vel optio qui
+                accusamus repellendus blanditiis eius repellat eos culpa reprehenderit commodi, ea labore eum? Eligendi
+                velit pariatur, doloribus beatae tenetur ut explicabo delectus maxime libero veritatis iste dolorem
+                cumque modi ducimus saepe nisi neque eum consequatur!
+            </p>
+        </div>
+        <div class="col rem">
+            <h1>rem</h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci nisi eaque ipsa necessitatibus harum
+                molestiae nihil cum molestias. Aliquid quam repellendus sed, non doloribus pariatur dolorum perferendis
+                ex
+                animi tempore cum magni architecto exercitationem voluptatum repellat ipsum recusandae consequuntur
+                omnis,
+                delectus, unde quae voluptatibus maxime itaque voluptatem! Asperiores, animi magni?
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>
