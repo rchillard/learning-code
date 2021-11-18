@@ -46,23 +46,74 @@
         }
 
         /* EMs */
-
+        /* em size is relative to the parent */
+        /* This goes up the chain of elements until a font-size is found (all the way to default, if need be) */
         .em h1 {
             font-size: 2.5em;
         }
 
+        /* The em unit compounds together */
         .em p {
             font-size: 1em;
         }
 
         /* REMs */
-
+        /* root em (rem) is more consistent because it looks at the root element to select font size */
         .rem h1 {
             font-size: 2.5rem;
         }
 
         .rem p {
             font-size: 1rem;
+        }
+
+        /* Call to Action */
+
+        h1 {
+            font-size: 4em;
+            margin: .5em 0;
+            line-height: 1;
+        }
+
+        .call-to-action {
+            background: linear-gradient(to left, #f46b45, #eea849);
+            padding: 3em 0;
+            color: white;
+            text-shadow: 0 0 15px rgab(0, 0, 0, .5);
+            margin-top: 500px;
+            font-size: 1em;
+        }
+
+        .call-to-action--small {
+            font-size: 1em;
+        }
+
+        .btn {
+            display: inline-block;
+            background: black;
+            font-weight: 700;
+            letter-spacing: 5px;
+            color: white;
+            text-transform: uppercase;
+            text-decoration: none;
+
+            /* Because the padding is set in em the --small btn change keeps everything proportional */
+            /* This means using ems will result in a more adapatable design */
+            padding: 1em 3em;
+
+            /* The margin is relative to the size of the button */
+            margin: 0 .25rem;
+
+            /* In theory, em and rem are superior to pixel because it means they can scale proportionally */
+        }
+
+        .btn--small {
+
+            font-size: .5em;
+        }
+
+        .btn--lrg {
+            font-size: 1.5em;
         }
     </style>
 </head>
@@ -91,6 +142,18 @@
                 delectus, unde quae voluptatibus maxime itaque voluptatem! Asperiores, animi magni?
             </p>
         </div>
+    </div>
+
+    <div class="call-to-action">
+        <h1>A call to action</h1>
+        <a href="" class="btn">Buy now</a>
+        <a href="" class="btn btn--small">Buy now</a>
+        <a href="" class="btn btn--lrg">Buy now</a>
+    </div>
+
+    <div class="call-to-action call-to-action--small">
+        <h1>A call to action</h1>
+        <a href="" class="btn">Buy now</a>
     </div>
 </body>
 
