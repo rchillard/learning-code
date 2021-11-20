@@ -25,7 +25,8 @@ body {
   background: #23424a;
   color: white;
 
-  width: 80%;
+  width: 80%; /* Set the ideal width to 80% of the viewport */
+  max-width: 750px; /* But limit the width to a real maximum of 750px, to keep large (wide) resolutions from rendering long strings of text */
   margin: 0 auto;
 
   padding: 2em;

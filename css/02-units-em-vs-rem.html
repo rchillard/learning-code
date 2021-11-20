@@ -46,10 +46,12 @@
         }
 
         /* EMs */
-        /* em size is relative to the parent */
-        /* This goes up the chain of elements until a font-size is found (all the way to default, if need be) */
+        /* For font-size, em size is relative to the nearest parent element that has defined font-size */
+        /* This goes up the chain of elements until a font-size is found (all the way to html/root, if need be) */
         .em h1 {
             font-size: 2.5em;
+            margin-bottom: 1em; /* For everything else (besides font-size) em is relative to the font-size declared in this rule (e.g. 2.5em) */
+            /* That means in the rule above, margin-bottom is actually equal to 2.5em.  It's referencing the line directly above */
         }
 
         /* The em unit compounds together */
@@ -59,6 +61,7 @@
 
         /* REMs */
         /* root em (rem) is more consistent because it looks at the root element to select font size */
+        /* the root element is what font size is defined in the html selector or :root selector */
         .rem h1 {
             font-size: 2.5rem;
         }
@@ -102,6 +105,7 @@
             padding: 1em 3em;
 
             /* The margin is relative to the size of the button */
+            /* You can use rems to ensure that spacing is consistent between buttons */
             margin: 0 .25rem;
 
             /* In theory, em and rem are superior to pixel because it means they can scale proportionally */

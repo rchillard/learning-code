@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        html {
+            font-size: 1em;
+        }
+        h1 {
+            font-size: 1.5em;
+        }
+        p, ul {
+            font-size: 1.25em;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        button {
+            background-color: black;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-size: 1.5rem;
+            margin: 2em; /* We use em so that the margin will grow proportionally with changes to font-size.  This references font-size set in this element */
+            padding: 1.5em; /* We use em for the same reasons on padding, so that the button's padding will grow proportionally as the font-size goes up */
+        }
+    </style>
+</head>
+<body> <!-- Inherited from html, computed font-size is 1em -->
+    <h1>Why ems Can Be Dangerous for Font Size</h1> <!-- Set by h1 rule, using parent of body, computed font-size is 1.5em -->
+    <p> <!-- Set by p rule, using parent of body, computed font-size is 1.25em -->
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem non maiores qui beatae distinctio provident
+        esse quasi nam maxime aspernatur possimus, laborum unde quae, aliquid labore nesciunt quia! Similique atque
+        dolor officia delectus ipsam corrupti cum, id, deleniti vero soluta libero quaerat doloremque aliquid aut magni
+        odio laborum molestiae repudiandae.
+    </p>
+    <ul> <!-- Set by ul rule, using parent of body, computed font-size is 1.25em... this is ok so far -->
+        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, corporis!</li>
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, omnis!</li>
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, cumque?</li>
+        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia, doloribus.</li>
+        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam, tempore?</li>
+        <ul> <!-- Set by ul rule, using parent of next level up ul (1.25em), computed font-size is 1.25em * 1.25em = 1.5265em -->
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, ipsam!</li>
+            <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi, culpa.</li>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, deleniti!</li>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, corrupti.</li>
+            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, tempora?</li>
+            <ul> <!-- Set by ul rule, using parent of next level up ul (1.5265em), computed font-size is 1.953125em -->
+                 <!-- This is the compounding rule of em as font size and why it's dangerous to use for this purpose-->
+                <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis, dicta.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, at.</li>
+                <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi, amet.</li>
+                <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate, nihil?</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, non.</li>
+            </ul>
+        </ul>
+    </ul>
+    <div class="container">
+        <button>
+            Buy Some Stuff
+        </button>
+    </div>
+</body>
+
+</html>
