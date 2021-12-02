@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>min(), max(), and clamp()</title>
+    <style>
+        body {
+            align-items: center;
+            background: slategray;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        h1 {
+            color: white;
+        }
+
+        h2 {
+            color: darkblue;
+        }
+
+        .demo {
+            background-color: snow;
+            box-shadow: 0 0 2em rgba(0, 0, 0, .15);
+            padding: 2rem;
+        }
+
+        .min {
+            width: min(500px, 50%);
+        }
+
+        .max {
+            width: max(500px, 50%);
+        }
+
+        .clamp {
+            font-size: clamp(1rem, 2vw, 3rem);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="demo min">
+        <h2>min() selects the smaller of two values</h2>
+        <p>The min() function in CSS will select the smaller of two values. In this example, we're using a single width
+            rule to regulate the size of the div containing this content. Here's the rule:</p>
+        <pre>
+    width: min(500px, 50%);
+        </pre>
+        <p>This is equivalent to:</p>
+        <pre>
+    width: 500px;
+    max-width: 50%;
+        </pre>
+        <p>You can also directly embed math in the function:</p>
+        <pre>
+    width: min(500px + 10%, 50%);
+        </pre>
+    </div>
+    <div class="demo max">
+        <h2>max() selects the larger of two values</h2>
+        <p>The max() function in CSS will select the larger of two values. In this example, we're using thesame width
+            rule except substituing min for max. Here's the rule:</p>
+        <pre>
+    width: max(500px, 50%);
+        </pre>
+        <p>Resize the window to see how this div will try to take up 50% of the width until 50% is less than 500px,
+            after which it will simply stay 500px wide.</p>
+    </div>
+    <div class="demo clamp">
+        <h2>clamp() </h2>
+        <p>
+            The clamp() function in CSS is more useful for controlling typography. It allows you to set a minimum value,
+            an ideal value, and a maximum value. See this rule:
+        </p>
+        <pre>
+    font-size: clamp(1rem, 1.5vw, 3rem);
+        </pre>
+        <p>1rem is the minimum, 1.5vw the ideal, and 3rem is the maximum font size.</p>
+    </div>
+</body>
+
+</html>
