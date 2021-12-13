@@ -1,0 +1,94 @@
+:root {
+    --color-white: #F3EED9;
+    --color-mauve: #824936;
+    --color-black: #222C2A;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 18px;
+    margin: 0;
+}
+
+h1 {
+    color: var(--color-mauve);
+    font-size: 3.33rem;
+    margin-top: 0;
+}
+
+h2 {
+    color: var(--color-white);
+    font-size: 2rem;
+    margin-top: 0;
+}
+
+img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+p {
+    font-size: 1.3rem;
+}
+
+section {
+    display: flex;
+    gap: 2rem;
+    padding: 4rem;
+}
+
+.intro {
+    background-color: var(--color-white);
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 50vh;
+}
+
+.intro span {
+    font-size: 1rem;
+    font-weight: 200;
+    text-transform: uppercase;
+}
+
+.quality {
+    background-color: whitesmoke;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.quality h2 {
+    color: var(--color-mauve);
+}
+
+.made {
+    background-color: var(--color-black);
+    color: whitesmoke;
+}
+
+.created {
+    background-color: var(--color-mauve);
+    color: whitesmoke;
+}
+
+.two-columns {
+    columns: 2 auto;
+    column-gap: 3rem;
+}
+
+/* 900px and below */
+@media screen and (max-width: 900px) {
+    section {
+        flex-direction: column;
+    }
+
+    .two-columns {
+        columns: auto;
+    }
+}
