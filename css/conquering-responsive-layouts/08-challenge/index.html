@@ -1,59 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conquering Responsive Layouts</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&family=Roboto:wght@300;400&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="style.css">
-    <title>Challenge 4</title>
 </head>
-
 <body>
-    <main>
-        <section class="intro">
-            <span>Lorem Ipsum Sit</span>
-            <h1>Responsive layouts don't have to be a struggle</h1>
-        </section>
-        <section class="quality">
-            <h2>Quality Designs</h2>
-            <div class="two-columns">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat nam dicta cumque at natus doloribus
-                    praesentium vel, libero, blanditiis voluptas consequatur accusamus eveniet molestias fugit beatae
-                    voluptatum maxime cupiditate corrupti? Maxime, sapiente! Magnam nulla, repudiandae iure ipsa, earum
-                    vitae nihil commodi tempora, exercitationem soluta fugiat pariatur laborum est perferendis ab!</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid blanditiis ipsam temporibus
-                    dignissimos?
-                    Minima tempora eveniet consequuntur optio ipsam, ipsum repellendus, corrupti omnis voluptates atque
-                    esse, veniam similique a doloribus dolor! Architecto dolore, odio nihil, totam repellendus obcaecati
-                    nulla animi laudantium sed nemo, laborum quo aliquid illo cupiditate adipisci voluptatibus?</p>
-            </div>
-        </section>
-        <section class="made">
-            <div>
-                <h2>Made custom for you</h2>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore quis illo modi nemo officia
-                    quibusdam
-                    magnam sit pariatur iure quidem esse ullam, laudantium voluptate ducimus similique, delectus facilis
-                    qui
-                    illum, enim expedita. Impedit nihil at deserunt veritatis excepturi exercitationem obcaecati
-                    recusandae
-                    in. Ratione odit cum nesciunt, reiciendis officia cupiditate consequuntur.</p>
-            </div>
-            <img src="img/image-01.jpg" alt="Person staring across mist covered valley to peer at sunset">
-        </section>
-        <section class="created">
-            <img src="img/image-02.jpg" alt="Sunrays across mountains in late afternoon">
-            <div>
-                <h2>Created with care</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni incidunt quod minima voluptatem saepe
-                    enim sed quia est eveniet architecto amet, cum, velit nostrum tenetur possimus ut maxime voluptas
-                    modi veritatis ad recusandae corrupti, dolorem nesciunt culpa? Similique libero expedita hic eaque
-                    minus. Repudiandae exercitationem esse, ratione dolor facilis tempora!</p>
+    <section class="intro">
+        <div class="container">
+            <p class="intro__text">lorem ipsum sit</p>
+            <h1 class="intro__title">Responsive layouts don’t<br>
+            have to be a struggle</h1>
 
+        </div>
+    </section>
+
+    <section class="section-two">
+        <div class="container">
+            <h2 class="section-title section-title--dark">Quality Designs</h2>
+            <div class="row">
+                <div class="col">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dui vivamus arcu felis bibendum ut tristique. Arcu dui vivamus arcu felis. Sociis natoque penatibus et magnis dis. </p>
+                </div>
+                <div class="col">
+                    <p>Felis donec et odio pellentesque diam volutpat. Aliquam purus sit amet luctus venenatis. Turpis in eu mi bibendum neque egestas congue quisque egestas. Pellentesque sit amet porttitor eget dolor morbi non.</p>
+                </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
+
+    <section class="section-three">
+        <div class="container row">
+            <div class="col">
+                <h2 class="section-title">Made custom for you</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+            </div>
+            <div class="col">
+                <img src="img/image-01.jpg" alt="a sunset over a mountain range">
+            </div>
+        </div>
+    </section>
+
+    <section class="section-four">
+        <div class="container row">
+            <div class="col">
+                <img src="img/image-02.jpg" alt="a sunset over a mountain range with tree branches in the foreground">
+            </div>
+            <div class="col">
+                <h2 class="section-title">Created with care</h2>
+                <p>Felis donec et odio pellentesque diam volutpat. Aliquam purus sit amet luctus venenatis. Turpis in eu mi bibendum neque egestas congue quisque egestas. Pellentesque sit amet porttitor eget dolor morbi non.</p>
+            </div>
+        </div>
+    </section>
 </body>
-
 </html>

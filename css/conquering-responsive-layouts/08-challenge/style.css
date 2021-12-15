@@ -1,94 +1,98 @@
-:root {
-    --color-white: #F3EED9;
-    --color-mauve: #824936;
-    --color-black: #222C2A;
+*, *::before, *::after {
+    box-sizing: border-box;
 }
+
+/* 
+
+font-family: 'Roboto', sans-serif;
+font-family: 'Playfair Display', serif;
+
+*/
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 18px;
     margin: 0;
-}
-
-h1 {
-    color: var(--color-mauve);
-    font-size: 3.33rem;
-    margin-top: 0;
-}
-
-h2 {
-    color: var(--color-white);
-    font-size: 2rem;
-    margin-top: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.3125rem;
+    line-height: 1.6;
+    color: #222C2A;
 }
 
 img {
-    max-height: 100%;
     max-width: 100%;
 }
 
-main {
-    display: flex;
-    flex-direction: column;
-}
-
-p {
-    font-size: 1.3rem;
+h1, h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    margin-top: 0;
+    line-height: 1.1;
 }
 
 section {
-    display: flex;
-    gap: 2rem;
-    padding: 4rem;
+    padding: 4em 0;
+}
+
+.container {
+    width: 85%;
+    margin: 0 auto;
+    max-width: 1128px;
+}
+
+.section-title {
+    font-size: 2.25rem;
+    color: #F3EED9;
+}
+
+.section-title--dark {
+    color: #824936;
 }
 
 .intro {
-    background-color: var(--color-white);
+    background: #F3EED9;
+    text-align: center;
+    color: #824936;
+    min-height: 660px;
+
+    display: flex;
     align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    min-height: 50vh;
 }
 
-.intro span {
-    font-size: 1rem;
-    font-weight: 200;
+.intro__text {
     text-transform: uppercase;
+    letter-spacing: 10px;
+    font-size: 1.125rem;
+    color: #222C2A;
+    margin: 0 0 .25em;
 }
 
-.quality {
-    background-color: whitesmoke;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+.intro__title {
+    font-size: 3rem;
 }
 
-.quality h2 {
-    color: var(--color-mauve);
+.section-three {
+    background-color: #222C2A;
+    color: #fff;
 }
 
-.made {
-    background-color: var(--color-black);
-    color: whitesmoke;
+.section-four {
+    background-color: #824936;
+    color: #fff;
 }
 
-.created {
-    background-color: var(--color-mauve);
-    color: whitesmoke;
-}
-
-.two-columns {
-    columns: 2 auto;
-    column-gap: 3rem;
-}
-
-/* 900px and below */
-@media screen and (max-width: 900px) {
-    section {
-        flex-direction: column;
+@media (min-width: 800px) {
+    .row {
+        display: flex;
     }
 
-    .two-columns {
-        columns: auto;
+    .col {
+        width: 100%;
+    }
+
+    .col + .col {
+        margin-left: 5em;
+    }
+
+    .intro__title {
+        font-size: 3.75rem;
     }
 }
