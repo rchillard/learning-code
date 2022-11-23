@@ -8,7 +8,7 @@ CREATE TABLE tablename
 -- List all the tables in a database
 SHOW TABLES;
 
--- Three different ways to see the contents of a table
+-- Three different ways to see the columns of a table
 SHOW COLUMNS FROM tablename;
 DESCRIBE tablename;
 DESC tablename;
