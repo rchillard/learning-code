@@ -2,6 +2,42 @@
 
 It's time to revisit databases.
 
+## Data Types
+
+## Date
+- DATE
+- DATETIME
+- TIMESTAMP
+- TIME
+- YEAR
+
+### Numeric
+- INT
+- SMALLINT
+- TINYINT
+- MEDIUMINT
+- BIGINT
+- DECIMAL
+- NUMERIC
+- FLOAT
+- DOUBLE
+- BIT
+
+### String
+- CHAR
+- VARCHAR
+- BINARY
+- VARBINARY
+- BLOB
+- TINYBLOB
+- MEDIUMBLOB
+- LONGBLOB
+- TEXT
+- TINYTEXT
+- MEDIUMTEXT
+- LONGTEXT
+- ENUM
+
 ## Getting Started
 
 These setup instructions are for Kubuntu 20.04 on a development machine.  If you stumble upon this, please use a secure install script for a real database or a production system.  This is only for installing a local database to hack against for fun and great learning.
