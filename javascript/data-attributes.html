@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <label>First Name: <input name="firstname" type="text" data-firstname="Peter" data-fieldorder="1"></label>
+        <label>Last Name: </label><input name="lastname" type="text" data-lastname="Pan"></label>
+        <label>Age: </label><input name="age" type="number" data-age="9"></label>
+        <p data-output></p>
+    </div>
+    <script>
+        let output = document.querySelector('[data-output]');
+
+        let firstName = document.querySelector('[data-firstname]');
+        console.log(firstName.getAttribute('data-firstname'));
+
+        let firstNameData = firstName.dataset;
+        console.log(firstNameData);
+
+        let lastName = document.querySelector('[data-lastname]');
+        console.log(lastName.dataset.lastname);
+        lastName.dataset.fieldorder = 2;
+    </script>
+</body>
+</html>
