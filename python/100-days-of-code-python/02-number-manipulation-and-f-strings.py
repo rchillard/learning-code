@@ -36,7 +36,7 @@ print(result)
 
 # Plus-Equals
 
-result += 1
+result += 1 # Equivalent to result = result + 1
 
 print(result)
 

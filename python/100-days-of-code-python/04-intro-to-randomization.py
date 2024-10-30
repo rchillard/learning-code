@@ -1,3 +1,9 @@
+# Python random numbers use Mersenne Twister 
+# https://en.wikipedia.org/wiki/Mersenne_Twister
+
+# Khan Academy video on pseudorandom number generators
+# https://www.youtube.com/watch?v=GtOt7EBNEwQ
+
 import random
 
 random_integer = random.randint(1, 10)
