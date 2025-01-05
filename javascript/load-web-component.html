@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Components Example</title>
+</head>
+<body>
+  <background-component>
+    <p>Welcome to the dynamic background!</p>
+  </background-component>
+
+  <!-- 3 Options for loading Web Components -->
+
+  <!-- Manually importing a component directly -->
+  <script src="web-components/background-component.js" defer></script>
+
+  <!-- Using a loader script to import multiple components -->
+  <script src="load-web-component.js" type="module"></script>
+
+  <!-- Using a loader script to dynamically import multiple components -->
+  <script src="load-web-component-dynamically.js" type="module"></script>
+</body>
+</html>
