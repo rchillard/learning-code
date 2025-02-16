@@ -13,3 +13,9 @@ paying_person = names[random_pay]
 print(paying_person)
 
 print(f"{paying_person} is going to buy the meal today!")
+
+# Alternative
+# random.choice(seq) - Return a random element from the non-empty sequence seq. If seq is empty, raises IndexError.
+# seq can be a list
+# paying_person = random.choice(names)
+
